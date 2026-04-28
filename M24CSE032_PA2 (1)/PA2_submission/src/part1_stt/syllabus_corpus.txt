@@ -1,0 +1,105 @@
+speech understanding signal processing acoustic phonetics
+spectral analysis frequency domain time domain
+fourier transform discrete fourier transform fast fourier transform
+short time fourier transform spectrogram power spectrum
+mel frequency cepstral coefficients mfcc cepstrum cepstral
+linear prediction coding lpc autocorrelation
+formant frequency fundamental frequency pitch
+voiced unvoiced speech silence detection
+pre emphasis filter window function hamming hanning
+sampling theorem nyquist frequency aliasing
+quantization analog to digital conversion
+hidden markov model hmm viterbi algorithm
+gaussian mixture model gmm expectation maximization
+baum welch algorithm forward backward algorithm
+acoustic model language model pronunciation model
+beam search decoding greedy decoding
+connectionist temporal classification ctc
+attention mechanism self attention transformer
+encoder decoder architecture sequence to sequence
+recurrent neural network rnn lstm gru
+convolutional neural network cnn deep learning
+batch normalization dropout regularization
+stochastic gradient descent backpropagation
+word error rate character error rate
+perplexity cross entropy loss function
+speaker recognition speaker verification speaker identification
+speaker diarization voice activity detection
+x vector d vector i vector speaker embedding
+ecapa tdnn time delay neural network
+text to speech synthesis tts vocoder
+waveform generation mel spectrogram
+wavenot waveglow hifi gan neural vocoder
+prosody intonation stress rhythm
+duration model pitch model energy model
+voice conversion voice cloning zero shot
+automatic speech recognition asr
+end to end speech recognition
+subword tokenization byte pair encoding
+data augmentation specaugment speed perturbation
+noise robust speech recognition
+far field speech recognition microphone array
+beamforming echo cancellation noise reduction
+spectral subtraction wiener filter
+deep neural network feed forward network
+transfer learning fine tuning pre training
+self supervised learning wav2vec hubert
+contrastive learning masked language model
+speech emotion recognition sentiment analysis
+keyword spotting wake word detection
+code switching multilingual speech processing
+language identification language detection
+international phonetic alphabet ipa phoneme
+grapheme to phoneme conversion g2p
+articulatory phonetics acoustic phonetics
+vowel consonant fricative plosive nasal
+coarticulation assimilation phonological rules
+speech signal waveform amplitude frequency
+energy contour pitch contour
+dynamic time warping dtw alignment
+mel scale bark scale
+filter bank triangular filter
+log mel spectrogram feature extraction
+normalization standardization mean variance
+cepstral mean normalization cmn
+vocal tract resonance formant transition
+source filter model glottal pulse
+jitter shimmer harmonic to noise ratio
+signal to noise ratio snr
+reverberation room impulse response
+anti aliasing filter low pass filter
+band pass filter high pass filter
+discrete cosine transform dct
+inverse fourier transform ifft
+overlap add method overlap save method
+frame blocking windowing
+zero crossing rate short time energy
+endpoint detection speech segmentation
+lexicon dictionary vocabulary
+trigram bigram unigram n gram
+language model perplexity smoothing
+kneser ney smoothing laplace smoothing
+word embedding word2vec glove
+neural language model transformer lm
+decoder only model encoder only model
+attention score query key value
+multi head attention positional encoding
+layer normalization residual connection
+speech enhancement speech separation
+independent component analysis blind source separation
+cochlear model auditory model
+equal loudness contour fletcher munson
+psychoacoustics loudness perception pitch perception
+sampling rate bit depth audio codec
+mu law a law companding
+speech coding vocoder parametric
+analysis synthesis overlap add
+phase vocoder griffin lim
+adversarial attack adversarial robustness
+fast gradient sign method fgsm
+spoofing detection anti spoofing
+countermeasure system bonafide spoof
+equal error rate eer false acceptance rate
+false rejection rate detection error tradeoff
+linear frequency cepstral coefficients lfcc
+constant q cepstral coefficients cqcc

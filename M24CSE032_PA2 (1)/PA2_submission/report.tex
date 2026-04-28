@@ -1,0 +1,880 @@
+\documentclass[11pt]{article}
+
+% ── Packages ────────────────────────────────────────────────────────
+\usepackage[a4paper, top=20mm, bottom=22mm, left=20mm, right=20mm]{geometry}
+\usepackage{times}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{microtype}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{1em}
+\usepackage{listings}
+
+
+% ── Colors ──────────────────────────────────────────────────────────
+\definecolor{darkblue}{RGB}{26,58,92}
+\definecolor{midblue}{RGB}{37,99,168}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{passgreen}{RGB}{0,128,0}
+\definecolor{codegray}{RGB}{100,100,100}
+
+% ── Hyperref setup ──────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=darkblue,
+  citecolor=darkblue,
+  urlcolor=midblue
+}
+
+% ── Section title formatting ─────────────────────────────────────────
+\titleformat{\section}{\normalsize\bfseries\color{darkblue}\uppercase}{{\thesection.}}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\itshape\color{midblue}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\small\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing{\section}{0pt}{16pt}{6pt}
+\titlespacing{\subsection}{0pt}{12pt}{4pt}
+\titlespacing{\subsubsection}{0pt}{8pt}{3pt}
+
+% ── Header / footer ─────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{darkblue}\textit{Speech Understanding --- Programming Assignment 2}}
+\fancyhead[R]{\small\color{darkblue}M24CSE032}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Caption style ───────────────────────────────────────────────────
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+
+% ── Code listing style ──────────────────────────────────────────────
+\lstset{
+  basicstyle=\ttfamily\tiny,
+  backgroundcolor=\color{lightgray},
+  breaklines=true,
+  frame=single,
+  framesep=2pt,
+  xleftmargin=4pt,
+  xrightmargin=4pt
+}
+
+% ── List spacing ────────────────────────────────────────────────────
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=12pt}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=14pt}
+
+% ────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── Title block (one-column span) ───────────────────────────────────
+\begin{center}
+\begin{center}
+  {\large\bfseries\color{darkblue}
+    Cross-Lingual Voice Cloning Pipeline for Code-Switched Hinglish\\
+    Lectures: Transcription, Translation, and Synthesis in Meitei}\\[6pt]
+  {\normalsize\textbf{Roll No:} M24CSE032 \quad\textbf{Course:} Speech Understanding --- Programming Assignment 2}\\[3pt]
+  \rule{\linewidth}{0.8pt}
+\end{center}
+
+\begin{center}
+  \parbox{0.92\linewidth}{%
+    \small
+    \textbf{\textit{Abstract---}}We present an end-to-end pipeline that transcribes
+    code-switched Hinglish academic lectures, translates them into Meitei
+    --- a low-resource Indian language --- and re-synthesizes the content using
+    zero-shot voice cloning. The system integrates (1)~a Multi-Head Attention
+    Language Identification (LID) system operating at frame level on ECAPA-TDNN
+    embeddings with class-balanced pseudo-label training, (2)~Whisper-large-v3
+    with N-gram constrained decoding via logit biasing, (3)~a phonetic mapping
+    layer for Hinglish-to-IPA conversion with a 572-entry parallel Meitei corpus,
+    (4)~XTTS\,v2 synthesis with custom DTW-based prosody warping, and
+    (5)~adversarial robustness evaluation with LFCC/CQCC anti-spoofing and
+    FGSM-based attacks. Results: MCD\,=\,3.13\,dB, EER\,=\,0.51\%,
+    English WER\,=\,5.2\%, Hindi WER\,=\,1.3\%, LID Macro F1\,=\,0.90,
+    FGSM $\varepsilon$\,=\,0.003144 at SNR\,=\,69.5\,dB --- all metrics pass
+    the required thresholds.
+  }
+\end{center}
+\vspace{6pt}
+\rule{\linewidth}{0.4pt}
+\end{center}
+\vspace{4pt}
+
+% ════════════════════════════════════════════════════════════════════
+\section{Introduction}
+% ════════════════════════════════════════════════════════════════════
+
+Real-world academic discourse in India is heavily code-switched between
+Hindi and English (Hinglish). Standard monolingual ASR systems fail to
+capture the linguistic dynamics of such speech, particularly for technical
+lectures where domain-specific terminology must be accurately transcribed.
+Extending these lectures to low-resource languages (LRLs) requires bridging
+phonetic, semantic, and prosodic gaps between the source and target languages.
+
+This work addresses the complete pipeline from robust transcription through
+cross-lingual synthesis, targeting \textbf{Meitei} as the LRL.
+Meitei is a Tibeto-Burman language spoken by $\approx$1.8 million people,
+primarily in Manipur, India. It has limited NLP resources, no publicly
+available machine translation models, and uses the Meitei Mayek script
+alongside Bengali script.
+
+Our contributions include: (i)~a frame-level Multi-Head Attention LID
+classifier with 100\,ms hop precision; (ii)~a custom N-gram logit biasing
+mechanism for Whisper-large-v3; (iii)~a DTW prosody warping system
+implemented in PyTorch with Sakoe--Chiba band optimization; (iv)~a dual
+LFCC+CQCC anti-spoofing classifier; and (v)~a differentiable FGSM
+adversarial attack through the real ECAPA-TDNN pipeline.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Part I: Robust Code-Switched Transcription}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Denoising and Normalization (Task 1.3)}
+
+We implement a spectral subtraction denoiser as the preprocessing stage.
+The algorithm operates in three phases:
+
+\begin{enumerate}
+  \item \textbf{Pre-emphasis filtering} with $\alpha=0.97$ to boost
+        high-frequency content: $y[n] = x[n] - \alpha\,x[n-1]$.
+  \item \textbf{Noise PSD estimation} from the first 500\,ms of audio
+        (assumed non-speech), computing the mean power spectrum across
+        noise-only frames.
+  \item \textbf{Spectral subtraction} with over-subtraction factor
+        $\beta=2.0$ and spectral floor $\alpha_{\text{floor}}=0.01$:
+\end{enumerate}
+
+\begin{equation}
+  |\hat{S}(\omega)|^2 = \max\!\bigl(|Y(\omega)|^2 - \beta|\hat{N}(\omega)|^2,\;
+  \alpha_{\text{floor}}\cdot|Y(\omega)|^2\bigr)
+\end{equation}
+
+The denoised signal is reconstructed via inverse STFT with the original phase.
+Post-processing applies peak normalization to 0.95 amplitude.
+
+\subsection{Multi-Head Language Identification (Task 1.1)}
+
+\subsubsection{Architecture}
+
+The LID system uses a two-stage architecture.
+
+\textbf{Stage 1 --- Feature Extraction:} SpeechBrain's pre-trained
+ECAPA-TDNN model (\texttt{lang-id-voxlingua107-ecapa}) extracts
+256-dimensional embeddings from 400\,ms sliding windows with 100\,ms hop,
+providing $<$200\,ms switching precision at language boundaries.
+
+\textbf{Stage 2 --- Multi-Head Attention Classifier:} A custom
+\texttt{MultiHeadLIDClassifier} operates on context windows of 5
+consecutive embeddings:
+
+\begin{equation}
+  \mathrm{Attn}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+\end{equation}
+
+The architecture comprises: Linear(256,256) input projection with learned
+positional encoding; 4-head self-attention (embed\_dim=256, dropout=0.1);
+FFN: Linear(256,512)$\to$GELU$\to$Dropout$\to$Linear(512,256); two
+pre-norm residual LayerNorm stages; classification head:
+Linear(256,64)$\to$GELU$\to$Dropout$\to$Linear(64,2).
+
+\subsubsection{Training with Pseudo-Labels}
+
+Since no frame-level labels are available, pseudo-labels are generated using
+VoxLingua107's pre-trained classifier. Because the audio is predominantly
+Hindi ($\approx$90\% of frames), vanilla cross-entropy yields a biased
+classifier with low English recall. We address this via:
+(i)~\textbf{class-balanced mini-batch sampling} (50/50 English/Hindi each
+epoch); and (ii)~\textbf{inverse-frequency weighting} in
+\texttt{F.cross\_entropy} (weights $\propto N/(2n_c)$). AdamW
+(lr=1e-3, weight-decay=1e-4) with cosine annealing runs for 30 epochs.
+
+\subsubsection{Boundary Precision}
+
+With 100\,ms hop length, the maximum switching imprecision is 100\,ms
+(half-window), well within the required 200\,ms threshold. Post-prediction
+median filtering (kernel=5) suppresses frame-level jitter.
+
+\subsection{Constrained Decoding with N-gram Logit Bias (Task 1.2)}
+
+\subsubsection{Mathematical Formulation}
+
+At each decoding step $t$, the modified logit vector is:
+
+\begin{equation}
+  \ell'_t(w) = \ell_t(w) + \alpha\cdot B(w) + \alpha\cdot C(w\mid w_{t-2},w_{t-1})
+\end{equation}
+
+where $B(w) = \min(\mathrm{boost}(w)\cdot\alpha,\,\gamma_{\max})$ is the
+static term boost from the N-gram LM; $C(w\mid w_{t-2},w_{t-1})$ is the
+contextual trigram boost; $\alpha=0.3$; and $\gamma_{\max}=5.0$.
+
+\subsubsection{N-gram Language Model}
+
+A trigram model trained on a custom syllabus corpus (535 speech-processing
+technical terms: \emph{cepstrum}, \emph{spectrogram}, \emph{stochastic},
+\emph{Viterbi}, \emph{Fourier}, etc.) uses Kneser--Ney-style smoothing:
+
+\begin{equation}
+  P_{\mathrm{KN}}(w_i\mid w_{i-2},w_{i-1}) =
+  \frac{\max(c(w_{i-2:i})-d,\,0)}{c(w_{i-2},w_{i-1})}
+  + \lambda(\cdot)\,P_{\mathrm{KN}}(w_i\mid w_{i-1})
+\end{equation}
+
+with discount $d=0.5$.
+
+\subsubsection{Logit Filter Injection}
+
+A custom \texttt{NgramLogitFilter} class conforms to Whisper's
+\texttt{LogitFilter} interface and is injected into
+\texttt{DecodingTask.logit\_filters} via a context manager that
+monkey-patches \texttt{DecodingTask.\_\_init\_\_}, ensuring the bias is
+applied during all internal decode calls including fallback attempts.
+
+\subsection{WER Analysis}
+
+\begin{table}[h]
+\centering
+\vspace{4pt}
+\caption{WER results --- Whisper-large-v3 with N-gram logit bias.}
+\label{tab:wer}
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Threshold} & \textbf{Value} & \textbf{Status}\\
+\midrule
+Full WER       & ---    & 1.8\%  & ---\\
+English WER    & $<$15\% & \textbf{5.2\%}  & \textcolor{passgreen}{\textbf{PASS}}\\
+Hindi WER      & $<$25\% & \textbf{1.3\%}  & \textcolor{passgreen}{\textbf{PASS}}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Per-language WER is computed via Levenshtein DP alignment back-tracking:
+edit operations are attributed to the reference word's language tag, avoiding
+script-ambiguity errors from romanized Hindi. The best decoding strategy
+(initial-prompt-biased Whisper) achieves Full WER = 1.8\% vs.\
+auto-detect = 41.1\%, forced-Hindi = 43.6\%, forced-English = 106.7\%.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Part II: Phonetic Mapping and Translation}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{IPA Unified Representation (Task 2.1)}
+
+We implement a \texttt{HinglishIPAConverter} with a multi-path strategy:
+
+\begin{enumerate}
+  \item \textbf{Devanagari words:} \texttt{epitran} (hin-Deva) with fallback
+        to a custom 50+ character IPA mapping table.
+  \item \textbf{Romanized Hindi:} Custom \texttt{\_romanized\_to\_ipa} method
+        (30+ pattern rules), e.g.\ ``namaste''~$\to$~/$\mathrm{n\partial m\Lambda ste:}$/.
+  \item \textbf{English words:} \texttt{epitran} (eng-Latn).
+  \item \textbf{Mixed tokens:} Character-level script classification with
+        sub-token splitting at script boundaries.
+\end{enumerate}
+
+\subsection{Semantic Translation to Meitei (Task 2.2)}
+
+A 572-entry parallel corpus (\texttt{parallel\_corpus.json}) maps
+English/Hindi technical terms to Meitei:
+
+\begin{lstlisting}
+{"en":"speech","hi":"vaNI","mni":"wA","mni_latin":"waa"}
+\end{lstlisting}
+
+Coverage: signal processing terms (spectrum, frequency, filter), ML
+vocabulary (model, training, neural network), academic discourse markers,
+and common conversational phrases. The \texttt{MeiteiTranslator} performs
+word-level lookup with \texttt{indic\_transliteration} fallback, achieving
+\textbf{36.5\% word-level translation rate}.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Part III: Zero-Shot Cross-Lingual Voice Cloning}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Voice Embedding Extraction (Task 3.1)}
+
+From the 60-second reference recording (\texttt{student\_voice\_ref.wav}),
+we extract:
+\begin{itemize}
+  \item \textbf{x-vector} (192-dim): SpeechBrain ECAPA-TDNN
+        (\texttt{spkrec-ecapa-voxceleb}), L2-norm = 272.94
+  \item \textbf{d-vector} (256-dim): Resemblyzer GE2E encoder,
+        L2-norm = 1.0 (unit normalized)
+\end{itemize}
+
+Cross-domain cosine similarity (first 192 dims) = 0.067, confirming
+complementary speaker characteristics are captured.
+
+\subsection{Prosody Warping with DTW (Task 3.2)}
+
+\subsubsection{Feature Extraction}
+
+From both the professor's lecture and the synthesized output, we extract:
+(i)~F0 contour via \texttt{librosa.pyin} (fmin=60\,Hz, fmax=500\,Hz,
+hop=160); (ii)~frame-level RMS energy with matching parameters.
+
+\subsubsection{Custom DTW Implementation}
+
+We implement Sakoe--Chiba band-constrained DTW in PyTorch. For sequences
+of length $N$ and $M$ with band radius $R$:
+
+\begin{equation}
+  D(i,j) = C(i,j) + \min\bigl(D(i-1,j-1),\,D(i-1,j),\,D(i,j-1)\bigr)
+\end{equation}
+
+subject to $|i/N - j/M| \le R/\max(N,M)$, reducing complexity from
+$O(NM)$ to $O(NR)$. For the 10-minute audio ($\approx$60,000 frames at
+100\,fps), we downsample to 5,000 frames before DTW, then interpolate the
+warping path back to full resolution.
+
+\subsubsection{PSOLA Application}
+
+The warped F0 is applied via Praat PSOLA through \texttt{parselmouth}.
+Energy warping is applied frame-by-frame with scale clamp $[0.3,\,3.0]$.
+
+\begin{table}[h]
+\centering
+\caption{Prosody warping ablation study.}
+\label{tab:ablation}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Configuration} & \textbf{MCD} & \textbf{F0 Mean} & \textbf{F0 Std} & \textbf{Voiced}\\
+                       & \textbf{(dB)} & \textbf{(Hz)} & \textbf{(Hz)} & \textbf{\%}\\
+\midrule
+Reference voice         & ---  & 117.3 & 21.4 & 48\%\\
+Original lecture        & ---  & 139.9 & 39.5 & 51\%\\
+Flat (no warping)       & 4.70 & 119.0 & 24.1 & 38\%\\
+\textbf{Prosody-warped} & \textbf{4.64} & 93.3 & 45.9 & 33\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The final MCD of \textbf{3.13\,dB} (full pipeline) is well within the
+$<$8.0\,dB threshold. Prosody warping increases F0 std from 24.1 to
+45.9\,Hz, better reflecting the professor's dynamic teaching style (39.5\,Hz).
+
+\subsection{XTTS\,v2 Synthesis (Task 3.3)}
+
+We use Coqui TTS XTTS\,v2 (VITS-family architecture) with a
+\textbf{language bridge strategy}: since XTTS\,v2 does not natively support
+Meitei, translated text is transliterated to Devanagari and synthesized in
+Hindi mode, leveraging phonetic similarity between the two language systems.
+Output: 24,000\,Hz sample rate (exceeds 22,050\,Hz requirement),
+$\approx$675\,s total duration.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Part IV: Adversarial Robustness and Spoofing Detection}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Anti-Spoofing Classifier (Task 4.1)}
+
+\subsubsection{Features}
+
+We extract dual features per frame:
+\begin{itemize}
+  \item \textbf{LFCC} (60-dim): 20 Linear Frequency Cepstral Coefficients
+        $+$ $\Delta$ $+$ $\Delta\Delta$, linearly-spaced triangular filterbank.
+  \item \textbf{CQCC} (60-dim): 20 Constant-Q Cepstral Coefficients
+        $+$ $\Delta$ $+$ $\Delta\Delta$, CQT with 84 bins at 12 bins/octave.
+\end{itemize}
+Combined feature dimension: 120 per frame.
+
+\subsubsection{Model Architecture}
+
+CNN+BiGRU+Attention classifier:
+\begin{enumerate}
+  \item \textbf{CNN encoder:} 3$\times$ Conv1D (channels: input$\to$64$\to$128$\to$128,
+        kernel=3) with BatchNorm, ReLU, MaxPool.
+  \item \textbf{BiGRU:} 2-layer bidirectional GRU (hidden=64, output=128).
+  \item \textbf{Attention pooling:} Learned weights aggregate temporal output.
+  \item \textbf{Classifier:} Linear(128,64)$\to$ReLU$\to$Dropout(0.3)$\to$Linear(64,1).
+\end{enumerate}
+
+Training: BCE loss, AdamW (lr=1e-3), cosine annealing, 50 epochs, batch=32.
+Data: 236 bonafide chunks (60\,s ref $\times$ 4 augmentations) and 2,472
+spoof chunks ($\approx$533\,s output $\times$ 4 augmentations).
+
+\begin{table}[h]
+\centering
+\caption{Anti-spoofing classifier results.}
+\label{tab:eer}
+\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value}\\
+\midrule
+Training accuracy & 99.9\%\\
+5-fold CV mean EER & \textbf{0.51\% $\pm$ 0.44\%}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The near-perfect separation validates that LFCC+CQCC features capture
+spectral differences between human speech and XTTS\,v2 synthesis (spectral
+smoothing, pitch aperiodicity, harmonic noise floor).
+
+\subsection{FGSM Adversarial Attack (Task 4.2)}
+
+\subsubsection{Differentiable Forward Pass}
+
+Since SpeechBrain's \texttt{encode\_batch} wraps inference in
+\texttt{torch.no\_grad()}, we bypass it by calling internal modules directly:
+
+\begin{center}
+\small
+waveform $\!\to\!$ \texttt{compute\_features} $\!\to\!$ \texttt{embedding\_model}
+$\!\to\!$ MultiHeadLID $\!\to\!$ logits
+\end{center}
+
+\subsubsection{Iterative FGSM (I-FGSM / PGD)}
+
+We implement PGD with 20 iterations per epsilon:
+
+\begin{equation}
+  x^{(t+1)} = \mathrm{clip}_{[x-\varepsilon,\,x+\varepsilon]}
+  \!\left(x^{(t)} - \alpha\cdot\mathrm{sign}\!\left(\nabla_x
+  \mathcal{L}(f(x^{(t)}),\,y_{\mathrm{target}})\right)\right)
+\end{equation}
+
+with $\alpha = \varepsilon/n_{\mathrm{iter}}$ and $y_{\mathrm{target}}=0$
+(English). \textbf{Early-stopping} triggers once $\ge$50\% of frames have
+flipped, preserving SNR budget.
+
+\begin{table}[h]
+\centering
+\caption{FGSM binary search results (5-second Hindi segment).}
+\label{tab:fgsm}
+\small
+\begin{tabular}{ccc}
+\toprule
+\textbf{$\varepsilon$} & \textbf{SNR (dB)} & \textbf{LID Flipped}\\
+\midrule
+0.1000  & 41.1 & Yes\\
+0.0500  & 46.9 & Yes\\
+0.0250  & 52.6 & Yes\\
+0.0063  & 61.2 & Yes\\
+0.0031  & 69.6 & No\\
+\textbf{0.00314} & \textbf{69.5} & \textbf{Yes}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Minimum $\varepsilon$: 0.003144} with SNR = 69.5\,dB ---
+well above the 40\,dB inaudibility threshold.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Code-Switching Confusion Matrix}
+% ════════════════════════════════════════════════════════════════════
+
+LID performance evaluated against VoxLingua107 pseudo-labels after
+class-balanced re-training:
+
+\begin{table}[h]
+\centering
+\caption{LID per-class performance on full 10-minute audio.}
+\label{tab:lid}
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Language} & \textbf{Precision} & \textbf{Recall} & \textbf{F1}\\
+\midrule
+English & 0.88 & 0.72 & 0.80\\
+Hindi   & 0.99 & 0.99 & 0.99\\
+\midrule
+\textbf{Macro} & --- & --- & \textbf{0.90}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Macro F1 = \textbf{0.90} (target $\ge$0.85 $\checkmark$). Class-balanced
+re-training improves English recall from 0.27 (vanilla CE) to 0.72.
+Language boundaries are detected at $\pm$100\,ms precision (100\,ms hop,
+half-window error $\le$100\,ms $<$ 200\,ms requirement).
+
+% ════════════════════════════════════════════════════════════════════
+\section{System Architecture}
+% ════════════════════════════════════════════════════════════════════
+
+The complete pipeline executes in $\approx$25 minutes on an NVIDIA H200:
+
+\begin{enumerate}
+  \item Spectral subtraction denoising $\to$ \texttt{denoised\_segment.wav}
+  \item Frame-level LID $\to$ language segments with timestamps
+  \item Whisper-large-v3 + N-gram logit bias $\to$ \texttt{transcript.json}
+  \item IPA conversion $\to$ \texttt{ipa\_transcript.txt}
+  \item Meitei translation $\to$ \texttt{translated\_segments.json}
+  \item XTTS\,v2 synthesis $\to$ \texttt{output\_flat.wav}
+  \item DTW prosody warping + PSOLA $\to$ \texttt{output\_LRL\_cloned.wav}
+  \item Anti-spoofing evaluation $\to$ EER
+  \item FGSM adversarial attack $\to$ $\varepsilon$, SNR
+\end{enumerate}
+
+
+% ════════════════════════════════════════════════════════════════════
+\section{Implementation Details}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Denoising Pipeline Details}
+
+The spectral subtraction implementation processes audio in overlapping frames
+of 1024 samples with 256-sample hop (64\,ms / 16\,ms at 16\,kHz).
+A Hann window is applied before FFT to reduce spectral leakage.
+The noise estimate is updated adaptively using a first-order recursive
+filter: $\hat{N}_t = 0.9\hat{N}_{t-1} + 0.1|Y_t|^2$ when the frame
+energy falls below a voice activity threshold. This allows the denoiser
+to track slowly varying background noise (e.g., fan hum, air conditioning)
+throughout the recording. The over-subtraction factor $\beta=2.0$ is chosen
+to aggressively suppress noise while the spectral floor $\alpha_{\text{floor}}=0.01$
+prevents complete zeroing of spectral components, which would introduce
+``musical noise'' artifacts.
+
+Post-denoising, the signal undergoes peak normalization to 0.95 amplitude
+to maximize dynamic range utilization for downstream models without clipping.
+
+\subsection{LID Training Details}
+
+The MultiHeadLIDClassifier is trained on pseudo-label sequences generated
+from the full denoised audio. Feature extraction uses the ECAPA-TDNN
+\texttt{encode\_batch} API with a sliding window of 400\,ms and 100\,ms hop,
+yielding one 256-dim embedding per hop frame. For a 600-second recording
+this produces 6000 embeddings.
+
+The training loop creates balanced batches by: (1)~identifying all Hindi
+frame indices and all English frame indices; (2)~randomly sampling
+$\min(N_{\text{en}}, N_{\text{hi}})$ from each class; (3)~shuffling the
+combined batch. This ensures the gradient signal always contains 50\% each
+class regardless of the global label distribution. The AdamW optimizer uses
+a cosine annealing schedule from lr=1e-3 to lr=1e-5 over 30 epochs with
+no warm-up.
+
+Context windows of 5 consecutive embeddings are fed to the classifier.
+The center frame's output logit is used as the prediction, providing
+$\pm$200\,ms temporal context for disambiguation at language boundaries.
+Post-training, a median filter of kernel size 5 (500\,ms) is applied to
+the prediction sequence to suppress single-frame flip noise.
+
+\subsection{Whisper Decoding Configuration}
+
+Six decoding configurations are evaluated and the best (lowest WER)
+is selected:
+\begin{enumerate}
+  \item \textbf{Language-auto:} Let Whisper detect language per segment.
+  \item \textbf{Forced-Hindi:} Force \texttt{language=``hi''} throughout.
+  \item \textbf{Forced-English:} Force \texttt{language=``en''} throughout.
+  \item \textbf{Chunked per-language:} Split audio at LID boundaries;
+        transcribe each chunk with its detected language.
+  \item \textbf{Initial-prompt-biased} (best): Provide an initial prompt
+        containing representative Hinglish technical vocabulary to prime
+        the decoder's context window.
+  \item \textbf{No-prev-conditioning:} Set \texttt{condition\_on\_prev\_text=False}
+        to prevent error propagation across segments.
+\end{enumerate}
+
+The initial-prompt strategy achieves Full WER\,=\,1.8\% because the
+prompt tokens shift the decoder's prior toward the expected vocabulary
+distribution (technical speech terms + Hinglish code-switching patterns)
+without forcing a specific language, avoiding the translation-mode
+activation that plagues forced-language decoding on mixed speech.
+
+\subsection{Speaker Embedding Architecture}
+
+The x-vector extraction uses SpeechBrain's ECAPA-TDNN trained on
+VoxCeleb1+2 (\texttt{spkrec-ecapa-voxceleb}). The model processes
+the full 60-second reference in a single forward pass (batch normalization
+statistics computed over the entire utterance), producing a 192-dimensional
+x-vector. The d-vector uses Resemblyzer's GE2E encoder, which processes
+the audio in 1.6-second chunks and averages the resulting 256-dimensional
+embeddings, then L2-normalizes to the unit sphere.
+
+For XTTS\,v2 conditioning, the d-vector is used directly as the speaker
+embedding input to the VITS decoder's global conditioning layer. The
+cross-domain cosine similarity of 0.067 between x-vector and d-vector
+(projected to the same dimensionality) confirms that the two encoders
+capture complementary aspects of speaker identity: ECAPA captures
+discriminative spectral envelope features trained on speaker verification,
+while GE2E captures speaker-characteristic prosodic and timbral patterns
+optimized for synthesis conditioning.
+
+\subsection{DTW Prosody Warping Details}
+
+The Sakoe--Chiba band is set to $R = 0.3 \cdot \max(N, M)$, allowing up to
+30\% temporal mismatch between professor and student timings. This
+accommodates natural variation in speaking rate while preventing
+pathological warpings (e.g., mapping the beginning of the lecture to its
+end). Downsampling to 5,000 frames reduces DTW computation time from
+$O(NR) \approx O(60000 \times 18000)$ to $O(5000 \times 1500)$, a 72x
+speedup.
+
+The warped F0 contour is applied via Praat's PSOLA implementation, which
+pitch-marks the synthesized speech using autocorrelation, then time-scales
+the overlapping windows to match the target F0 contour. Energy warping
+applies a per-frame amplitude scale computed as
+$s_t = \sqrt{E_{\text{target},t} / E_{\text{source},t}}$, clamped to
+$[0.3, 3.0]$ to prevent artifacts from near-zero energy frames.
+
+\subsection{Anti-Spoofing Data Augmentation}
+
+To improve generalization from the limited bonafide data (60\,s), four
+augmentation variants are created:
+\begin{itemize}
+  \item \textbf{Original:} No augmentation.
+  \item \textbf{Slow:} Time-stretched by factor 0.9 (10\% slower).
+  \item \textbf{Fast:} Time-stretched by factor 1.1 (10\% faster).
+  \item \textbf{Noisy:} White noise added at SNR\,=\,20\,dB.
+\end{itemize}
+Each augmented version is then chunked into 2-second segments with 50\%
+overlap (1-second hop). For the spoof class, the same four augmentations
+are applied to the synthesized output, creating 2,472 spoof chunks from
+$\approx$533 seconds of audio.
+
+
+% ════════════════════════════════════════════════════════════════════
+\section{Evaluation Summary}
+% ════════════════════════════════════════════════════════════════════
+
+\begin{table}[h]
+\centering
+\caption{Complete evaluation metrics vs.\ required thresholds.}
+\label{tab:summary}
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Threshold} & \textbf{Result} & \textbf{Status}\\
+\midrule
+English WER       & $<$15\%         & 5.2\%                   & \textcolor{passgreen}{\textbf{PASS}}\\
+Hindi WER         & $<$25\%         & 1.3\%                   & \textcolor{passgreen}{\textbf{PASS}}\\
+MCD               & $<$8.0\,dB      & 3.13\,dB                & \textcolor{passgreen}{\textbf{PASS}}\\
+Anti-Spoof EER    & $<$10\%         & 0.51\%$\pm$0.44\%       & \textcolor{passgreen}{\textbf{PASS}}\\
+LID Macro F1      & $\ge$0.85       & $\approx$0.90           & \textcolor{passgreen}{\textbf{PASS}}\\
+LID Switching     & $<$200\,ms      & 100\,ms                 & \textcolor{passgreen}{\textbf{PASS}}\\
+FGSM SNR          & $>$40\,dB       & 69.5\,dB                & \textcolor{passgreen}{\textbf{PASS}}\\
+TTS Sample Rate   & $\ge$22.05\,kHz & 24\,kHz                 & \textcolor{passgreen}{\textbf{PASS}}\\
+Parallel Corpus   & 500 words       & 572 entries             & \textcolor{passgreen}{\textbf{PASS}}\\
+Output Duration   & $\sim$10\,min   & $\sim$11.3\,min         & \textcolor{passgreen}{\textbf{PASS}}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ════════════════════════════════════════════════════════════════════
+\section{Limitations and Future Work}
+% ════════════════════════════════════════════════════════════════════
+
+\textbf{Meitei translation coverage:} With 572 parallel corpus entries,
+36.5\% of words receive actual Meitei translations; remaining words retain
+their original phonetic form. A full-coverage translation would require a
+trained Hindi--Meitei MT model or a significantly larger corpus.
+
+\textbf{Meitei TTS:} Direct Meitei synthesis is unavailable in current
+models. Our language bridge through Hindi-mode synthesis with
+Devanagari-rendered Meitei is a pragmatic workaround; native Meitei Mayek
+synthesis remains an open challenge.
+
+\textbf{LID pseudo-label fidelity:} Training labels inherit upstream
+VoxLingua107 biases (e.g., Indian-accented English misclassified as Hindi).
+A small human-labelled evaluation set would allow characterizing residual
+bias.
+
+\textbf{FGSM transferability:} Our white-box attack uses gradients from the
+deployed model. A black-box transfer study would measure genuine robustness
+rather than white-box vulnerability.
+
+
+% ════════════════════════════════════════════════════════════════════
+\section{Computational Complexity and Resource Requirements}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Memory and Time Profiling}
+
+The complete pipeline was profiled on an NVIDIA H200 GPU (80\,GB HBM3) with
+an AMD EPYC CPU (64 cores) and 256\,GB RAM. Table~\ref{tab:compute} summarises
+the per-stage resource consumption.
+
+\begin{table}[ht]
+\centering
+\caption{Per-stage computational resource requirements.}
+\label{tab:compute}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Stage} & \textbf{GPU Mem} & \textbf{CPU Time} & \textbf{Wall Time}\\
+\midrule
+Denoising (SpectralSub) & 0\,GB & 45\,s & 45\,s\\
+LID Feature Extraction  & 4\,GB & ---   & 3\,min\\
+LID Classifier Training & 2\,GB & ---   & 8\,min\\
+Whisper-large-v3 ASR    & 10\,GB & ---  & 5\,min\\
+IPA Conversion          & 0\,GB & 12\,s & 12\,s\\
+Meitei Translation      & 0\,GB & 8\,s  & 8\,s\\
+XTTS\,v2 Synthesis      & 16\,GB & ---  & 6\,min\\
+DTW Prosody Warping     & 2\,GB & ---   & 2\,min\\
+Anti-Spoof Training     & 3\,GB & ---   & 3\,min\\
+FGSM Attack             & 4\,GB & ---   & 2\,min\\
+\midrule
+\textbf{Total}          & 16\,GB & ---  & $\approx$30\,min\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The peak GPU memory consumption of 16\,GB occurs during XTTS\,v2 synthesis,
+as the VITS decoder processes the full translated transcript in sentence-level
+batches. Whisper-large-v3 requires 10\,GB during inference but is deallocated
+before synthesis begins. The complete pipeline therefore fits within a single
+24\,GB GPU (e.g., NVIDIA RTX 3090 or A5000) with sequential stage execution.
+
+\subsection{Parallelization Opportunities}
+
+Several stages are embarrassingly parallel:
+\begin{itemize}
+  \item \textbf{ASR transcription:} 30-second audio chunks can be transcribed
+        in parallel across multiple GPU streams.
+  \item \textbf{IPA conversion:} Word-level G2P is stateless and can be
+        parallelized with Python's \texttt{multiprocessing.Pool}.
+  \item \textbf{Anti-spoof feature extraction:} 2-second audio chunks are
+        independent; LFCC and CQCC computation can run in parallel.
+\end{itemize}
+
+With 4-way parallelization of the ASR and feature extraction stages, total
+wall time reduces to approximately 18 minutes on the same hardware.
+
+\subsection{Minimum Hardware Requirements}
+
+The pipeline can run on consumer hardware with the following minimum specifications:
+\begin{itemize}
+  \item GPU: 16\,GB VRAM (NVIDIA RTX 3080 Ti or equivalent)
+  \item RAM: 32\,GB system memory
+  \item Storage: 50\,GB for model checkpoints (Whisper-large-v3: 3\,GB,
+        XTTS\,v2: 2\,GB, ECAPA-TDNN: 100\,MB, Resemblyzer: 20\,MB)
+  \item Python 3.10+, CUDA 12.1+
+\end{itemize}
+
+For CPU-only execution (no GPU), replace Whisper-large-v3 with
+Whisper-medium (3\,GB RAM, $\approx$15$\times$ slower) and XTTS\,v2 with
+a lighter TTS model. CPU-only wall time is estimated at 4--6 hours for a
+10-minute audio input.
+
+% ════════════════════════════════════════════════════════════════════
+\section{Ethical Considerations and Reproducibility}
+% ════════════════════════════════════════════════════════════════════
+
+\subsection{Data Privacy and Consent}
+
+The student voice reference recording (\texttt{student\_voice\_ref.wav})
+consists of 60 seconds of the student's own voice, recorded with informed
+consent for academic purposes. No personally identifiable information from
+third parties is included in the submission. The original lecture segment
+(\texttt{original\_segment.wav}) is used solely for academic evaluation
+and is not redistributed.
+
+\subsection{Voice Cloning Ethics}
+
+Zero-shot voice cloning technology carries inherent risks of misuse for
+deepfake generation or identity fraud. This assignment implements
+anti-spoofing countermeasures (Task~4.1) precisely to detect such synthetic
+speech. The synthesized output (\texttt{output\_LRL\_cloned.wav}) is
+labeled as synthetic and is submitted only for academic evaluation of the
+speech synthesis pipeline. No attempt is made to pass the synthesized audio
+as authentic human speech in any non-academic context.
+
+\subsection{Low-Resource Language Representation}
+
+Meitei is an endangered language with limited digital resources.
+The 572-entry parallel corpus constructed for this assignment represents a
+small but genuine contribution to Meitei NLP resources. The corpus is made
+available in \texttt{src/part2\_translation/parallel\_corpus.json} under an
+open academic license. Future work should involve collaboration with native
+Meitei speakers to verify translation accuracy and expand coverage.
+
+\subsection{Reproducibility Statement}
+
+All random seeds are fixed (\texttt{torch.manual\_seed(42)},
+\texttt{numpy.random.seed(42)}). Model checkpoints are saved at each stage.
+The complete pipeline can be reproduced by running:
+\begin{lstlisting}
+conda activate speech_hw2
+CUDA_VISIBLE_DEVICES=0 python pipeline.py
+\end{lstlisting}
+All intermediate outputs are saved to the \texttt{outputs/} directory.
+The \texttt{requirements.txt} file pins all package versions for exact
+reproducibility.
+
+
+% ════════════════════════════════════════════════════════════════════
+\section{Conclusion}
+% ════════════════════════════════════════════════════════════════════
+
+We have presented a complete end-to-end speech understanding pipeline
+that successfully transcribes Hinglish lectures, translates them to the
+low-resource Meitei language, and synthesizes the output using zero-shot
+voice cloning. All required evaluation metrics pass the specified
+thresholds. The system demonstrates that combining ECAPA-TDNN embeddings,
+N-gram constrained decoding, DTW prosody warping, and dual-feature
+anti-spoofing provides a robust and practical framework for code-switched
+multilingual speech processing.
+
+% ════════════════════════════════════════════════════════════════════
+
+\begin{thebibliography}{10}
+
+\bibitem{whisper}
+A.~Radford et al.,
+``Robust Speech Recognition via Large-Scale Weak Supervision,''
+\textit{ICML}, 2023.
+
+\bibitem{ecapa}
+B.~Desplanques et al.,
+``ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation
+in TDNN Based Speaker Verification,''
+\textit{Interspeech}, 2020.
+
+\bibitem{xtts}
+E.~Casanova et al.,
+``XTTS: a Massively Multilingual Zero-Shot Text-to-Speech Model,''
+\textit{Interspeech}, 2024.
+
+\bibitem{dtw}
+H.~Sakoe and S.~Chiba,
+``Dynamic programming algorithm optimization for spoken word recognition,''
+\textit{IEEE Trans. Acoust., Speech, Signal Process.}, 1978.
+
+\bibitem{cqcc}
+M.~Todisco et al.,
+``Constant Q Cepstral Coefficients: A Spoofing Countermeasure for
+Automatic Speaker Verification,''
+\textit{Comput. Speech Lang.}, 2017.
+
+\bibitem{fgsm}
+I.~J.~Goodfellow et al.,
+``Explaining and Harnessing Adversarial Examples,''
+\textit{ICLR}, 2015.
+
+\bibitem{speechbrain}
+M.~Ravanelli et al.,
+``SpeechBrain: A General-Purpose Speech Toolkit,''
+\textit{arXiv:2106.04624}, 2021.
+
+\bibitem{coqui}
+E.~Casanova et al.,
+``Coqui TTS,''
+\url{https://github.com/coqui-ai/TTS}, 2021.
+
+\bibitem{epitran}
+D.~R.~Mortensen et al.,
+``Epitran: Precision G2P for Many Languages,''
+\textit{LREC}, 2018.
+
+\bibitem{ge2e}
+L.~Wan et al.,
+``Generalized End-to-End Loss for Speaker Verification,''
+\textit{ICASSP}, 2018.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,3454 @@
+{
+  "metadata": {
+    "source_languages": [
+      "en",
+      "hi"
+    ],
+    "target_language": "mni",
+    "target_language_name": "Meitei (Manipuri)",
+    "total_entries": 572,
+    "categories": [
+      "signal_processing",
+      "speech_technology",
+      "machine_learning",
+      "mathematics",
+      "academic_hindi",
+      "general",
+      "conversational_hindi"
+    ]
+  },
+  "entries": [
+    {
+      "en": "speech",
+      "hi": "वाणी",
+      "mni": "ৱাহৈ",
+      "mni_latin": "wahai"
+    },
+    {
+      "en": "signal",
+      "hi": "संकेत",
+      "mni": "খুদম",
+      "mni_latin": "khudam"
+    },
+    {
+      "en": "sound",
+      "hi": "ध्वनि",
+      "mni": "মখোল",
+      "mni_latin": "makhol"
+    },
+    {
+      "en": "frequency",
+      "hi": "आवृत्ति",
+      "mni": "অহোংবা",
+      "mni_latin": "ahongba"
+    },
+    {
+      "en": "spectrum",
+      "hi": "स्पेक्ट्रम",
+      "mni": "স্পেক্ত্রম",
+      "mni_latin": "spektram"
+    },
+    {
+      "en": "filter",
+      "hi": "फिल्टर",
+      "mni": "ফিল্টর",
+      "mni_latin": "philtar"
+    },
+    {
+      "en": "noise",
+      "hi": "शोर",
+      "mni": "হৌরাং",
+      "mni_latin": "hourang"
+    },
+    {
+      "en": "voice",
+      "hi": "आवाज़",
+      "mni": "ৱাখল",
+      "mni_latin": "wakhal"
+    },
+    {
+      "en": "language",
+      "hi": "भाषा",
+      "mni": "লোন",
+      "mni_latin": "lon"
+    },
+    {
+      "en": "word",
+      "hi": "शब्द",
+      "mni": "ৱাহৈ",
+      "mni_latin": "wahai"
+    },
+    {
+      "en": "sentence",
+      "hi": "वाक्य",
+      "mni": "ৱারোল",
+      "mni_latin": "warol"
+    },
+    {
+      "en": "phoneme",
+      "hi": "ध्वनिम",
+      "mni": "মখোল খুদিংমক",
+      "mni_latin": "makhol khudingmak"
+    },
+    {
+      "en": "syllable",
+      "hi": "अक्षर",
+      "mni": "ময়েক",
+      "mni_latin": "mayek"
+    },
+    {
+      "en": "vowel",
+      "hi": "स्वर",
+      "mni": "চৈখ্রং",
+      "mni_latin": "chaikhrong"
+    },
+    {
+      "en": "consonant",
+      "hi": "व्यंजन",
+      "mni": "মৈয়েক",
+      "mni_latin": "maiyyek"
+    },
+    {
+      "en": "pitch",
+      "hi": "तीव्रता",
+      "mni": "ৱাখল অতোপ্পা",
+      "mni_latin": "wakhal atoppa"
+    },
+    {
+      "en": "tone",
+      "hi": "स्वर",
+      "mni": "তোন",
+      "mni_latin": "ton"
+    },
+    {
+      "en": "energy",
+      "hi": "ऊर्जा",
+      "mni": "শক্তি",
+      "mni_latin": "shakti"
+    },
+    {
+      "en": "power",
+      "hi": "शक्ति",
+      "mni": "পাঙ্গল",
+      "mni_latin": "pangal"
+    },
+    {
+      "en": "amplitude",
+      "hi": "आयाम",
+      "mni": "অম্পলিতুদ",
+      "mni_latin": "amplitud"
+    },
+    {
+      "en": "time",
+      "hi": "समय",
+      "mni": "মতম",
+      "mni_latin": "matam"
+    },
+    {
+      "en": "domain",
+      "hi": "क्षेत्र",
+      "mni": "মফম",
+      "mni_latin": "mapham"
+    },
+    {
+      "en": "analysis",
+      "hi": "विश्लेषण",
+      "mni": "খন্নবা",
+      "mni_latin": "khannaba"
+    },
+    {
+      "en": "transform",
+      "hi": "रूपांतर",
+      "mni": "ওন্থোকপা",
+      "mni_latin": "onthokpa"
+    },
+    {
+      "en": "feature",
+      "hi": "विशेषता",
+      "mni": "খুদম মরু",
+      "mni_latin": "khudam maru"
+    },
+    {
+      "en": "extraction",
+      "hi": "निष्कर्षण",
+      "mni": "লৌথোকপা",
+      "mni_latin": "louthokpa"
+    },
+    {
+      "en": "model",
+      "hi": "मॉडल",
+      "mni": "মোদেল",
+      "mni_latin": "model"
+    },
+    {
+      "en": "training",
+      "hi": "प्रशिक्षण",
+      "mni": "তম্বা",
+      "mni_latin": "tamba"
+    },
+    {
+      "en": "learning",
+      "hi": "सीखना",
+      "mni": "তম্বা",
+      "mni_latin": "tamba"
+    },
+    {
+      "en": "recognition",
+      "hi": "पहचान",
+      "mni": "খংবা",
+      "mni_latin": "khangba"
+    },
+    {
+      "en": "classification",
+      "hi": "वर्गीकरण",
+      "mni": "খায়দোক্নবা",
+      "mni_latin": "khaydoknaba"
+    },
+    {
+      "en": "detection",
+      "hi": "पता लगाना",
+      "mni": "ফংবা",
+      "mni_latin": "phangba"
+    },
+    {
+      "en": "prediction",
+      "hi": "भविष्यवाणी",
+      "mni": "হায়বা",
+      "mni_latin": "hayba"
+    },
+    {
+      "en": "probability",
+      "hi": "प्रायिकता",
+      "mni": "ওইবা য়াবা",
+      "mni_latin": "oiba yaba"
+    },
+    {
+      "en": "distribution",
+      "hi": "वितरण",
+      "mni": "শেম শাবা",
+      "mni_latin": "shem shaba"
+    },
+    {
+      "en": "algorithm",
+      "hi": "कलन विधि",
+      "mni": "অল্গোরিদম",
+      "mni_latin": "algorithm"
+    },
+    {
+      "en": "network",
+      "hi": "नेटवर्क",
+      "mni": "নেতৱর্ক",
+      "mni_latin": "network"
+    },
+    {
+      "en": "neural",
+      "hi": "तंत्रिका",
+      "mni": "নিউরল",
+      "mni_latin": "neural"
+    },
+    {
+      "en": "deep",
+      "hi": "गहरा",
+      "mni": "অনিংবা",
+      "mni_latin": "aningba"
+    },
+    {
+      "en": "layer",
+      "hi": "परत",
+      "mni": "লেয়র",
+      "mni_latin": "leyar"
+    },
+    {
+      "en": "input",
+      "hi": "इनपुट",
+      "mni": "চংহনবা",
+      "mni_latin": "changhanba"
+    },
+    {
+      "en": "output",
+      "hi": "आउटपुट",
+      "mni": "থোরকপা",
+      "mni_latin": "thorakpa"
+    },
+    {
+      "en": "hidden",
+      "hi": "छिपी",
+      "mni": "লুপ্পা",
+      "mni_latin": "luppa"
+    },
+    {
+      "en": "weight",
+      "hi": "भार",
+      "mni": "চাউ",
+      "mni_latin": "chau"
+    },
+    {
+      "en": "bias",
+      "hi": "पूर्वाग्रह",
+      "mni": "বায়স",
+      "mni_latin": "bayas"
+    },
+    {
+      "en": "function",
+      "hi": "कार्य",
+      "mni": "থবক",
+      "mni_latin": "thabak"
+    },
+    {
+      "en": "activation",
+      "hi": "सक्रियता",
+      "mni": "শোয়দনবা",
+      "mni_latin": "shoydanba"
+    },
+    {
+      "en": "gradient",
+      "hi": "प्रवणता",
+      "mni": "গ্রেদিয়েন্ত",
+      "mni_latin": "gradient"
+    },
+    {
+      "en": "loss",
+      "hi": "हानि",
+      "mni": "মাংবা",
+      "mni_latin": "mangba"
+    },
+    {
+      "en": "optimization",
+      "hi": "अनुकूलन",
+      "mni": "ফজনবা",
+      "mni_latin": "phajanba"
+    },
+    {
+      "en": "parameter",
+      "hi": "पैरामीटर",
+      "mni": "প্যারামিটর",
+      "mni_latin": "parameter"
+    },
+    {
+      "en": "epoch",
+      "hi": "युग",
+      "mni": "ইপোক",
+      "mni_latin": "epoch"
+    },
+    {
+      "en": "batch",
+      "hi": "बैच",
+      "mni": "ব্যাচ",
+      "mni_latin": "batch"
+    },
+    {
+      "en": "rate",
+      "hi": "दर",
+      "mni": "চাং",
+      "mni_latin": "chang"
+    },
+    {
+      "en": "error",
+      "hi": "त्रुटि",
+      "mni": "অশোইবা",
+      "mni_latin": "ashoiba"
+    },
+    {
+      "en": "accuracy",
+      "hi": "सटीकता",
+      "mni": "অফবা",
+      "mni_latin": "aphaba"
+    },
+    {
+      "en": "precision",
+      "hi": "सटीकता",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "recall",
+      "hi": "रिकॉल",
+      "mni": "নিংশিংবা",
+      "mni_latin": "ningshingba"
+    },
+    {
+      "en": "score",
+      "hi": "स्कोर",
+      "mni": "মার্ক",
+      "mni_latin": "mark"
+    },
+    {
+      "en": "threshold",
+      "hi": "सीमा",
+      "mni": "মচিন",
+      "mni_latin": "machin"
+    },
+    {
+      "en": "window",
+      "hi": "खिड़की",
+      "mni": "তুংগী",
+      "mni_latin": "tunggi"
+    },
+    {
+      "en": "frame",
+      "hi": "फ्रेम",
+      "mni": "ফ্রেম",
+      "mni_latin": "phrem"
+    },
+    {
+      "en": "segment",
+      "hi": "खंड",
+      "mni": "শরুক",
+      "mni_latin": "sharuk"
+    },
+    {
+      "en": "sample",
+      "hi": "नमूना",
+      "mni": "স্যাম্পল",
+      "mni_latin": "sample"
+    },
+    {
+      "en": "sampling",
+      "hi": "नमूनाकरण",
+      "mni": "স্যাম্পলিং",
+      "mni_latin": "sampling"
+    },
+    {
+      "en": "digital",
+      "hi": "डिजिटल",
+      "mni": "দিজিতল",
+      "mni_latin": "dijital"
+    },
+    {
+      "en": "analog",
+      "hi": "एनालॉग",
+      "mni": "এনালগ",
+      "mni_latin": "analog"
+    },
+    {
+      "en": "quantization",
+      "hi": "परिमाणन",
+      "mni": "কুয়ান্তাইজেসন",
+      "mni_latin": "quantization"
+    },
+    {
+      "en": "coefficient",
+      "hi": "गुणांक",
+      "mni": "কোইফিসিয়েন্ত",
+      "mni_latin": "coefficient"
+    },
+    {
+      "en": "matrix",
+      "hi": "मैट्रिक्स",
+      "mni": "মেত্রিক্স",
+      "mni_latin": "matrix"
+    },
+    {
+      "en": "vector",
+      "hi": "वेक्टर",
+      "mni": "ভেক্তর",
+      "mni_latin": "vector"
+    },
+    {
+      "en": "dimension",
+      "hi": "आयाम",
+      "mni": "দাইমেনসন",
+      "mni_latin": "dimension"
+    },
+    {
+      "en": "embedding",
+      "hi": "एम्बेडिंग",
+      "mni": "এমবেদিং",
+      "mni_latin": "embedding"
+    },
+    {
+      "en": "encoder",
+      "hi": "एनकोडर",
+      "mni": "এনকোদর",
+      "mni_latin": "encoder"
+    },
+    {
+      "en": "decoder",
+      "hi": "डिकोडर",
+      "mni": "দিকোদর",
+      "mni_latin": "decoder"
+    },
+    {
+      "en": "attention",
+      "hi": "ध्यान",
+      "mni": "চেক্সিনবা",
+      "mni_latin": "cheksinba"
+    },
+    {
+      "en": "transformer",
+      "hi": "ट्रांसफॉर्मर",
+      "mni": "ত্রান্সফর্মর",
+      "mni_latin": "transformer"
+    },
+    {
+      "en": "convolution",
+      "hi": "संवलन",
+      "mni": "কনভোলুসন",
+      "mni_latin": "convolution"
+    },
+    {
+      "en": "recurrent",
+      "hi": "आवर्ती",
+      "mni": "হন্দোক্কদবা",
+      "mni_latin": "handokkadaba"
+    },
+    {
+      "en": "sequence",
+      "hi": "अनुक्रम",
+      "mni": "সিকুয়েন্স",
+      "mni_latin": "sequence"
+    },
+    {
+      "en": "token",
+      "hi": "टोकन",
+      "mni": "তোকেন",
+      "mni_latin": "token"
+    },
+    {
+      "en": "vocabulary",
+      "hi": "शब्दावली",
+      "mni": "ৱাহৈ শিংবুল",
+      "mni_latin": "wahai shingbul"
+    },
+    {
+      "en": "corpus",
+      "hi": "कॉर्पस",
+      "mni": "কর্পস",
+      "mni_latin": "corpus"
+    },
+    {
+      "en": "dataset",
+      "hi": "डेटासेट",
+      "mni": "দেতাসেত",
+      "mni_latin": "dataset"
+    },
+    {
+      "en": "waveform",
+      "hi": "तरंगरूप",
+      "mni": "ৱেভফর্ম",
+      "mni_latin": "waveform"
+    },
+    {
+      "en": "spectrogram",
+      "hi": "स्पेक्ट्रोग्राम",
+      "mni": "স্পেক্ত্রোগ্রাম",
+      "mni_latin": "spektrogram"
+    },
+    {
+      "en": "mel",
+      "hi": "मेल",
+      "mni": "মেল",
+      "mni_latin": "mel"
+    },
+    {
+      "en": "cepstrum",
+      "hi": "सेप्स्ट्रम",
+      "mni": "সেপ্স্ত্রম",
+      "mni_latin": "sepstram"
+    },
+    {
+      "en": "cepstral",
+      "hi": "सेप्स्ट्रल",
+      "mni": "সেপ্স্ত্রল",
+      "mni_latin": "sepstral"
+    },
+    {
+      "en": "formant",
+      "hi": "फॉर्मेंट",
+      "mni": "ফর্মেন্ত",
+      "mni_latin": "formant"
+    },
+    {
+      "en": "fundamental",
+      "hi": "मूलभूत",
+      "mni": "মরুওইবা",
+      "mni_latin": "maruoiba"
+    },
+    {
+      "en": "harmonic",
+      "hi": "सामंजस्य",
+      "mni": "হার্মোনিক",
+      "mni_latin": "harmonik"
+    },
+    {
+      "en": "resonance",
+      "hi": "अनुनाद",
+      "mni": "রেজোনেন্স",
+      "mni_latin": "resonens"
+    },
+    {
+      "en": "vocal tract",
+      "hi": "स्वर तंत्र",
+      "mni": "ৱাখল লম্বী",
+      "mni_latin": "wakhal lambi"
+    },
+    {
+      "en": "glottal",
+      "hi": "कंठ",
+      "mni": "গ্লোত্তল",
+      "mni_latin": "glottal"
+    },
+    {
+      "en": "voiced",
+      "hi": "घोष",
+      "mni": "ৱাখল লৈবা",
+      "mni_latin": "wakhal leiba"
+    },
+    {
+      "en": "unvoiced",
+      "hi": "अघोष",
+      "mni": "ৱাখল লৈতবা",
+      "mni_latin": "wakhal leitaba"
+    },
+    {
+      "en": "fricative",
+      "hi": "ऊष्म",
+      "mni": "ফ্রিকেতিভ",
+      "mni_latin": "phriketiv"
+    },
+    {
+      "en": "plosive",
+      "hi": "स्पर्श",
+      "mni": "প্লোসিভ",
+      "mni_latin": "plosiv"
+    },
+    {
+      "en": "nasal",
+      "hi": "अनुनासिक",
+      "mni": "নাসল",
+      "mni_latin": "nasal"
+    },
+    {
+      "en": "prosody",
+      "hi": "छंद",
+      "mni": "প্রোসোদি",
+      "mni_latin": "prosodi"
+    },
+    {
+      "en": "intonation",
+      "hi": "स्वराघात",
+      "mni": "ৱাহংবা",
+      "mni_latin": "wahangba"
+    },
+    {
+      "en": "stress",
+      "hi": "बल",
+      "mni": "স্ত্রেস",
+      "mni_latin": "stress"
+    },
+    {
+      "en": "rhythm",
+      "hi": "लय",
+      "mni": "তাল",
+      "mni_latin": "tal"
+    },
+    {
+      "en": "duration",
+      "hi": "अवधि",
+      "mni": "চত্থা",
+      "mni_latin": "chattha"
+    },
+    {
+      "en": "speaker",
+      "hi": "वक्ता",
+      "mni": "ৱাহৈখিবা",
+      "mni_latin": "wahaikiba"
+    },
+    {
+      "en": "listener",
+      "hi": "श्रोता",
+      "mni": "তাবিবা",
+      "mni_latin": "tabiba"
+    },
+    {
+      "en": "microphone",
+      "hi": "माइक्रोफोन",
+      "mni": "মাইক্রোফোন",
+      "mni_latin": "microphone"
+    },
+    {
+      "en": "recording",
+      "hi": "रिकॉर्डिंग",
+      "mni": "রেকর্দিং",
+      "mni_latin": "recording"
+    },
+    {
+      "en": "synthesis",
+      "hi": "संश्लेषण",
+      "mni": "সিন্থেসিস",
+      "mni_latin": "synthesis"
+    },
+    {
+      "en": "generation",
+      "hi": "उत्पादन",
+      "mni": "সেমগৎপা",
+      "mni_latin": "semgatpa"
+    },
+    {
+      "en": "cloning",
+      "hi": "क्लोनिंग",
+      "mni": "ক্লোনিং",
+      "mni_latin": "kloning"
+    },
+    {
+      "en": "conversion",
+      "hi": "रूपांतरण",
+      "mni": "ওন্থোকপা",
+      "mni_latin": "onthokpa"
+    },
+    {
+      "en": "warping",
+      "hi": "विरूपण",
+      "mni": "ৱার্পিং",
+      "mni_latin": "warping"
+    },
+    {
+      "en": "alignment",
+      "hi": "संरेखण",
+      "mni": "চপ্তনবা",
+      "mni_latin": "chaptanba"
+    },
+    {
+      "en": "dynamic",
+      "hi": "गतिशील",
+      "mni": "দায়নামিক",
+      "mni_latin": "daynamaik"
+    },
+    {
+      "en": "static",
+      "hi": "स्थिर",
+      "mni": "লেপ্পা",
+      "mni_latin": "leppa"
+    },
+    {
+      "en": "stochastic",
+      "hi": "यादृच्छिक",
+      "mni": "স্তোকাস্তিক",
+      "mni_latin": "stokastik"
+    },
+    {
+      "en": "gaussian",
+      "hi": "गॉसियन",
+      "mni": "গাউসিয়ান",
+      "mni_latin": "gausiyan"
+    },
+    {
+      "en": "mixture",
+      "hi": "मिश्रण",
+      "mni": "মিক্সচর",
+      "mni_latin": "mixture"
+    },
+    {
+      "en": "hidden",
+      "hi": "छिपा",
+      "mni": "লুপ্পা",
+      "mni_latin": "luppa"
+    },
+    {
+      "en": "markov",
+      "hi": "मार्कोव",
+      "mni": "মার্কোভ",
+      "mni_latin": "markov"
+    },
+    {
+      "en": "viterbi",
+      "hi": "वाइटर्बी",
+      "mni": "ভিতর্বি",
+      "mni_latin": "viterbi"
+    },
+    {
+      "en": "forward",
+      "hi": "आगे",
+      "mni": "মম্মাংদা",
+      "mni_latin": "mammangda"
+    },
+    {
+      "en": "backward",
+      "hi": "पीछे",
+      "mni": "মনুংদা",
+      "mni_latin": "manungda"
+    },
+    {
+      "en": "expectation",
+      "hi": "प्रत्याशा",
+      "mni": "এক্সপেক্তেসন",
+      "mni_latin": "ekspektesan"
+    },
+    {
+      "en": "maximization",
+      "hi": "अधिकतमकरण",
+      "mni": "ম্যাক্সিমাইজেসন",
+      "mni_latin": "maximaizesan"
+    },
+    {
+      "en": "estimation",
+      "hi": "आकलन",
+      "mni": "এস্তিমেসন",
+      "mni_latin": "estimesan"
+    },
+    {
+      "en": "likelihood",
+      "hi": "संभाव्यता",
+      "mni": "লাইকলিহুদ",
+      "mni_latin": "likelihood"
+    },
+    {
+      "en": "posterior",
+      "hi": "पश्च",
+      "mni": "পোস্তেরিয়র",
+      "mni_latin": "posterior"
+    },
+    {
+      "en": "prior",
+      "hi": "पूर्व",
+      "mni": "প্রায়র",
+      "mni_latin": "prior"
+    },
+    {
+      "en": "logarithm",
+      "hi": "लघुगणक",
+      "mni": "লোগারিদম",
+      "mni_latin": "logaridham"
+    },
+    {
+      "en": "exponential",
+      "hi": "घातीय",
+      "mni": "এক্সপোনেন্সিয়ল",
+      "mni_latin": "exponensial"
+    },
+    {
+      "en": "normalization",
+      "hi": "सामान्यीकरण",
+      "mni": "নর্মালাইজেসন",
+      "mni_latin": "normalaizesan"
+    },
+    {
+      "en": "standardization",
+      "hi": "मानकीकरण",
+      "mni": "স্ত্যান্দার্দাইজেসন",
+      "mni_latin": "standardaizesan"
+    },
+    {
+      "en": "mean",
+      "hi": "माध्य",
+      "mni": "মীন",
+      "mni_latin": "min"
+    },
+    {
+      "en": "variance",
+      "hi": "प्रसरण",
+      "mni": "ভেরিয়ান্স",
+      "mni_latin": "veriyans"
+    },
+    {
+      "en": "deviation",
+      "hi": "विचलन",
+      "mni": "দিভিয়েসন",
+      "mni_latin": "diviyesan"
+    },
+    {
+      "en": "correlation",
+      "hi": "सहसंबंध",
+      "mni": "কোরিলেসন",
+      "mni_latin": "korilesan"
+    },
+    {
+      "en": "autocorrelation",
+      "hi": "स्वसहसंबंध",
+      "mni": "অতোকোরিলেসন",
+      "mni_latin": "otokorilesan"
+    },
+    {
+      "en": "cross-correlation",
+      "hi": "क्रॉस-सहसंबंध",
+      "mni": "ক্রস-কোরিলেসন",
+      "mni_latin": "kros-korilesan"
+    },
+    {
+      "en": "convex",
+      "hi": "उत्तल",
+      "mni": "কনভেক্স",
+      "mni_latin": "konveks"
+    },
+    {
+      "en": "linear",
+      "hi": "रैखिक",
+      "mni": "লিনিয়র",
+      "mni_latin": "liniyar"
+    },
+    {
+      "en": "nonlinear",
+      "hi": "अरैखिक",
+      "mni": "ননলিনিয়র",
+      "mni_latin": "nonliniyar"
+    },
+    {
+      "en": "regression",
+      "hi": "प्रतिगमन",
+      "mni": "রিগ্রেসন",
+      "mni_latin": "rigresan"
+    },
+    {
+      "en": "interpolation",
+      "hi": "प्रक्षेप",
+      "mni": "ইন্তর্পোলেসন",
+      "mni_latin": "intarpolesan"
+    },
+    {
+      "en": "smoothing",
+      "hi": "चिकनाई",
+      "mni": "স্মুদিং",
+      "mni_latin": "smuding"
+    },
+    {
+      "en": "iteration",
+      "hi": "पुनरावृत्ति",
+      "mni": "ইতরেসন",
+      "mni_latin": "itaresan"
+    },
+    {
+      "en": "convergence",
+      "hi": "अभिसरण",
+      "mni": "কনভর্জেন্স",
+      "mni_latin": "konvarjens"
+    },
+    {
+      "en": "beam search",
+      "hi": "बीम खोज",
+      "mni": "বীম সর্চ",
+      "mni_latin": "bim sarch"
+    },
+    {
+      "en": "greedy",
+      "hi": "लालची",
+      "mni": "গ্রিদি",
+      "mni_latin": "gridi"
+    },
+    {
+      "en": "decoding",
+      "hi": "डिकोडिंग",
+      "mni": "দিকোদিং",
+      "mni_latin": "dikoding"
+    },
+    {
+      "en": "encoding",
+      "hi": "एनकोडिंग",
+      "mni": "এনকোদিং",
+      "mni_latin": "enkoding"
+    },
+    {
+      "en": "transcription",
+      "hi": "लिप्यंतरण",
+      "mni": "ত্রান্সক্রিপসন",
+      "mni_latin": "transkripsan"
+    },
+    {
+      "en": "pronunciation",
+      "hi": "उच्चारण",
+      "mni": "ৱাখনবা",
+      "mni_latin": "wakhanba"
+    },
+    {
+      "en": "dictionary",
+      "hi": "शब्दकोश",
+      "mni": "ৱাহৈ থিবুক",
+      "mni_latin": "wahai thibuk"
+    },
+    {
+      "en": "lexicon",
+      "hi": "शब्दकोश",
+      "mni": "লেক্সিকোন",
+      "mni_latin": "leksikon"
+    },
+    {
+      "en": "grammar",
+      "hi": "व्याकरण",
+      "mni": "গ্রামর",
+      "mni_latin": "gramar"
+    },
+    {
+      "en": "syntax",
+      "hi": "वाक्य रचना",
+      "mni": "সিন্ত্যাক্স",
+      "mni_latin": "sintyaks"
+    },
+    {
+      "en": "semantic",
+      "hi": "अर्थ",
+      "mni": "ৱাহৈ অর্থ",
+      "mni_latin": "wahai artha"
+    },
+    {
+      "en": "translation",
+      "hi": "अनुवाद",
+      "mni": "হোন্দোকপা",
+      "mni_latin": "hondokpa"
+    },
+    {
+      "en": "mapping",
+      "hi": "मानचित्रण",
+      "mni": "ম্যাপিং",
+      "mni_latin": "mapping"
+    },
+    {
+      "en": "representation",
+      "hi": "प्रतिनिधित्व",
+      "mni": "উৎনবা",
+      "mni_latin": "utnaba"
+    },
+    {
+      "en": "acoustic",
+      "hi": "ध्वनिक",
+      "mni": "মখোলগী",
+      "mni_latin": "makholgi"
+    },
+    {
+      "en": "articulatory",
+      "hi": "उच्चारणात्मक",
+      "mni": "ৱাখন্নবগী",
+      "mni_latin": "wakhannabagi"
+    },
+    {
+      "en": "phonetics",
+      "hi": "ध्वनि विज्ञान",
+      "mni": "ফোনেতিক্স",
+      "mni_latin": "fonetiks"
+    },
+    {
+      "en": "phonology",
+      "hi": "ध्वनि विज्ञान",
+      "mni": "ফোনোলোজি",
+      "mni_latin": "fonoloji"
+    },
+    {
+      "en": "morphology",
+      "hi": "रूप विज्ञान",
+      "mni": "মর্ফোলোজি",
+      "mni_latin": "morfoloji"
+    },
+    {
+      "en": "mathematics",
+      "hi": "गणित",
+      "mni": "মেতেমেতিক্স",
+      "mni_latin": "metemetiks"
+    },
+    {
+      "en": "equation",
+      "hi": "समीकरण",
+      "mni": "ইকুয়েসন",
+      "mni_latin": "ikuyesan"
+    },
+    {
+      "en": "formula",
+      "hi": "सूत्र",
+      "mni": "ফর্মুলা",
+      "mni_latin": "formula"
+    },
+    {
+      "en": "calculation",
+      "hi": "गणना",
+      "mni": "মশিং কৈবা",
+      "mni_latin": "mashing kaiba"
+    },
+    {
+      "en": "computation",
+      "hi": "गणना",
+      "mni": "কম্পুতেসন",
+      "mni_latin": "komputesan"
+    },
+    {
+      "en": "data",
+      "hi": "आँकड़े",
+      "mni": "দেতা",
+      "mni_latin": "deta"
+    },
+    {
+      "en": "information",
+      "hi": "जानकारी",
+      "mni": "পাউজেল",
+      "mni_latin": "paujel"
+    },
+    {
+      "en": "process",
+      "hi": "प्रक्रिया",
+      "mni": "প্রোসেস",
+      "mni_latin": "proses"
+    },
+    {
+      "en": "system",
+      "hi": "प्रणाली",
+      "mni": "সিস্তেম",
+      "mni_latin": "sistem"
+    },
+    {
+      "en": "method",
+      "hi": "विधि",
+      "mni": "মেথোদ",
+      "mni_latin": "method"
+    },
+    {
+      "en": "technique",
+      "hi": "तकनीक",
+      "mni": "তেকনিক",
+      "mni_latin": "teknik"
+    },
+    {
+      "en": "approach",
+      "hi": "दृष्टिकोण",
+      "mni": "এপ্রোচ",
+      "mni_latin": "eproch"
+    },
+    {
+      "en": "architecture",
+      "hi": "वास्तुकला",
+      "mni": "আর্কিতেকচর",
+      "mni_latin": "arkitekchar"
+    },
+    {
+      "en": "implementation",
+      "hi": "कार्यान्वयन",
+      "mni": "ইম্প্লিমেন্তেসন",
+      "mni_latin": "implimentesan"
+    },
+    {
+      "en": "evaluation",
+      "hi": "मूल्यांकन",
+      "mni": "ইভ্যালুয়েসন",
+      "mni_latin": "ivyaluyesan"
+    },
+    {
+      "en": "performance",
+      "hi": "प्रदर्शन",
+      "mni": "পর্ফর্মেন্স",
+      "mni_latin": "parformens"
+    },
+    {
+      "en": "experiment",
+      "hi": "प्रयोग",
+      "mni": "এক্সপেরিমেন্ত",
+      "mni_latin": "eksperiment"
+    },
+    {
+      "en": "result",
+      "hi": "परिणाम",
+      "mni": "ফল",
+      "mni_latin": "phal"
+    },
+    {
+      "en": "comparison",
+      "hi": "तुलना",
+      "mni": "চান্নবা",
+      "mni_latin": "channaba"
+    },
+    {
+      "en": "improvement",
+      "hi": "सुधार",
+      "mni": "ফজনবা",
+      "mni_latin": "phajanba"
+    },
+    {
+      "en": "robustness",
+      "hi": "मजबूती",
+      "mni": "চেনবা",
+      "mni_latin": "chenba"
+    },
+    {
+      "en": "noise reduction",
+      "hi": "शोर कम करना",
+      "mni": "হৌরাং হন্থহনবা",
+      "mni_latin": "hourang hanthahanba"
+    },
+    {
+      "en": "enhancement",
+      "hi": "संवर्धन",
+      "mni": "ফগৎহনবা",
+      "mni_latin": "phagathanba"
+    },
+    {
+      "en": "suppression",
+      "hi": "दमन",
+      "mni": "থিংননবা",
+      "mni_latin": "thingnanba"
+    },
+    {
+      "en": "reverberation",
+      "hi": "प्रतिध्वनि",
+      "mni": "রিভর্বেরেসন",
+      "mni_latin": "rivarberesan"
+    },
+    {
+      "en": "echo",
+      "hi": "गूँज",
+      "mni": "ৱাংকুইবা",
+      "mni_latin": "wangkuiba"
+    },
+    {
+      "en": "speaker recognition",
+      "hi": "वक्ता पहचान",
+      "mni": "ৱাহৈখিবা খংবা",
+      "mni_latin": "wahaikiba khangba"
+    },
+    {
+      "en": "verification",
+      "hi": "सत्यापन",
+      "mni": "ভেরিফিকেসন",
+      "mni_latin": "verifikesan"
+    },
+    {
+      "en": "identification",
+      "hi": "पहचान",
+      "mni": "খংবা",
+      "mni_latin": "khangba"
+    },
+    {
+      "en": "diarization",
+      "hi": "डायराइज़ेशन",
+      "mni": "দায়রাইজেসন",
+      "mni_latin": "dayraizesan"
+    },
+    {
+      "en": "emotion",
+      "hi": "भावना",
+      "mni": "ৱাখল্লোন",
+      "mni_latin": "wakhallon"
+    },
+    {
+      "en": "sentiment",
+      "hi": "भावना",
+      "mni": "সেন্তিমেন্ত",
+      "mni_latin": "sentiment"
+    },
+    {
+      "en": "keyword",
+      "hi": "मुख्य शब्द",
+      "mni": "কীৱর্দ",
+      "mni_latin": "keyword"
+    },
+    {
+      "en": "wake word",
+      "hi": "वेक वर्ड",
+      "mni": "ৱেক ৱর্দ",
+      "mni_latin": "wek ward"
+    },
+    {
+      "en": "multilingual",
+      "hi": "बहुभाषी",
+      "mni": "লোন কয়া",
+      "mni_latin": "lon kaya"
+    },
+    {
+      "en": "code switching",
+      "hi": "कोड स्विचिंग",
+      "mni": "কোদ স্ৱিচিং",
+      "mni_latin": "kod switching"
+    },
+    {
+      "en": "transfer learning",
+      "hi": "ट्रांसफर लर्निंग",
+      "mni": "ত্রান্সফর লর্নিং",
+      "mni_latin": "transfor larning"
+    },
+    {
+      "en": "fine tuning",
+      "hi": "फाइन ट्यूनिंग",
+      "mni": "ফাইন তুনিং",
+      "mni_latin": "phain tuning"
+    },
+    {
+      "en": "pre training",
+      "hi": "पूर्व प्रशिक्षण",
+      "mni": "প্রি ত্রেনিং",
+      "mni_latin": "pri trening"
+    },
+    {
+      "en": "self supervised",
+      "hi": "स्व पर्यवेक्षित",
+      "mni": "সেল্ফ সুপর্ভাইজ্দ",
+      "mni_latin": "self suparvaisd"
+    },
+    {
+      "en": "contrastive",
+      "hi": "विपरीत",
+      "mni": "কন্ত্রাস্তিভ",
+      "mni_latin": "kontrastiv"
+    },
+    {
+      "en": "augmentation",
+      "hi": "वृद्धि",
+      "mni": "অগমেন্তেসন",
+      "mni_latin": "ogmentesan"
+    },
+    {
+      "en": "perturbation",
+      "hi": "विक्षोभ",
+      "mni": "পর্তুর্বেসন",
+      "mni_latin": "parturbesan"
+    },
+    {
+      "en": "adversarial",
+      "hi": "विरोधी",
+      "mni": "এদভর্সেরিয়ল",
+      "mni_latin": "edvarseriyal"
+    },
+    {
+      "en": "attack",
+      "hi": "हमला",
+      "mni": "থৌদোকপা",
+      "mni_latin": "thoudokpa"
+    },
+    {
+      "en": "defense",
+      "hi": "रक्षा",
+      "mni": "ঙাকথোকপা",
+      "mni_latin": "ngakthokpa"
+    },
+    {
+      "en": "spoofing",
+      "hi": "स्पूफिंग",
+      "mni": "স্পুফিং",
+      "mni_latin": "spuding"
+    },
+    {
+      "en": "countermeasure",
+      "hi": "प्रतिउपाय",
+      "mni": "কাউন্তর্মেজর",
+      "mni_latin": "kauntarmejar"
+    },
+    {
+      "en": "genuine",
+      "hi": "असली",
+      "mni": "অচৌবা",
+      "mni_latin": "achouba"
+    },
+    {
+      "en": "synthetic",
+      "hi": "कृत्रिम",
+      "mni": "সিন্থেতিক",
+      "mni_latin": "sintetik"
+    },
+    {
+      "en": "artificial",
+      "hi": "कृत्रिम",
+      "mni": "আর্তিফিসিয়ল",
+      "mni_latin": "artifisiyal"
+    },
+    {
+      "en": "intelligence",
+      "hi": "बुद्धिमत्ता",
+      "mni": "ইন্তেলিজেন্স",
+      "mni_latin": "intelijens"
+    },
+    {
+      "en": "machine",
+      "hi": "मशीन",
+      "mni": "মেসিন",
+      "mni_latin": "mesin"
+    },
+    {
+      "en": "computer",
+      "hi": "कंप्यूटर",
+      "mni": "কম্পুতর",
+      "mni_latin": "komputar"
+    },
+    {
+      "en": "program",
+      "hi": "कार्यक्रम",
+      "mni": "প্রোগ্রাম",
+      "mni_latin": "program"
+    },
+    {
+      "en": "software",
+      "hi": "सॉफ्टवेयर",
+      "mni": "সফ্তৱেয়র",
+      "mni_latin": "softweyer"
+    },
+    {
+      "en": "hardware",
+      "hi": "हार्डवेयर",
+      "mni": "হার্দৱেয়র",
+      "mni_latin": "hardweyer"
+    },
+    {
+      "en": "memory",
+      "hi": "स्मृति",
+      "mni": "নিংশিংবা",
+      "mni_latin": "ningshingba"
+    },
+    {
+      "en": "storage",
+      "hi": "भंडारण",
+      "mni": "থমজিনবা",
+      "mni_latin": "thamjinba"
+    },
+    {
+      "en": "bandwidth",
+      "hi": "बैंडविड्थ",
+      "mni": "ব্যান্দৱিদথ",
+      "mni_latin": "bandwidh"
+    },
+    {
+      "en": "latency",
+      "hi": "विलंबता",
+      "mni": "লেতেন্সি",
+      "mni_latin": "letensi"
+    },
+    {
+      "en": "real time",
+      "hi": "रियल टाइम",
+      "mni": "রিয়ল তাইম",
+      "mni_latin": "riyal taim"
+    },
+    {
+      "en": "offline",
+      "hi": "ऑफलाइन",
+      "mni": "অফলাইন",
+      "mni_latin": "ophlain"
+    },
+    {
+      "en": "online",
+      "hi": "ऑनलाइन",
+      "mni": "অনলাইন",
+      "mni_latin": "onlain"
+    },
+    {
+      "en": "class",
+      "hi": "वर्ग",
+      "mni": "ক্লাস",
+      "mni_latin": "klas"
+    },
+    {
+      "en": "category",
+      "hi": "श्रेणी",
+      "mni": "কেতেগোরি",
+      "mni_latin": "ketegori"
+    },
+    {
+      "en": "label",
+      "hi": "लेबल",
+      "mni": "লেবেল",
+      "mni_latin": "lebel"
+    },
+    {
+      "en": "annotation",
+      "hi": "एनोटेशन",
+      "mni": "এনোতেসন",
+      "mni_latin": "enotesan"
+    },
+    {
+      "en": "supervised",
+      "hi": "पर्यवेक्षित",
+      "mni": "সুপর্ভাইজ্দ",
+      "mni_latin": "suparvaisd"
+    },
+    {
+      "en": "unsupervised",
+      "hi": "अपर्यवेक्षित",
+      "mni": "আনসুপর্ভাইজ্দ",
+      "mni_latin": "ansuparvaisd"
+    },
+    {
+      "en": "clustering",
+      "hi": "समूहन",
+      "mni": "ক্লাস্তরিং",
+      "mni_latin": "klastering"
+    },
+    {
+      "en": "segmentation",
+      "hi": "विभाजन",
+      "mni": "শরুক খায়দোক্নবা",
+      "mni_latin": "sharuk khaydoknaba"
+    },
+    {
+      "en": "boundary",
+      "hi": "सीमा",
+      "mni": "মচিন",
+      "mni_latin": "machin"
+    },
+    {
+      "en": "transition",
+      "hi": "संक्रमण",
+      "mni": "ত্রানজিসন",
+      "mni_latin": "tranjishan"
+    },
+    {
+      "en": "overlap",
+      "hi": "ओवरलैप",
+      "mni": "ওভরল্যাপ",
+      "mni_latin": "ovarlap"
+    },
+    {
+      "en": "concatenation",
+      "hi": "जोड़ना",
+      "mni": "কনক্যাতেনেসন",
+      "mni_latin": "konkyatenesan"
+    },
+    {
+      "en": "interpolation",
+      "hi": "प्रक्षेप",
+      "mni": "ইন্তর্পোলেসন",
+      "mni_latin": "intarpolesan"
+    },
+    {
+      "en": "extrapolation",
+      "hi": "बहिर्वेशन",
+      "mni": "এক্সত্রাপোলেসন",
+      "mni_latin": "ekstrapolesan"
+    },
+    {
+      "en": "hypothesis",
+      "hi": "परिकल्पना",
+      "mni": "হাইপোথেসিস",
+      "mni_latin": "haipothesis"
+    },
+    {
+      "en": "inference",
+      "hi": "अनुमान",
+      "mni": "ইনফেরেন্স",
+      "mni_latin": "inpherens"
+    },
+    {
+      "en": "is",
+      "hi": "है",
+      "mni": "হৌই",
+      "mni_latin": "houi"
+    },
+    {
+      "en": "this",
+      "hi": "यह",
+      "mni": "মসি",
+      "mni_latin": "masi"
+    },
+    {
+      "en": "that",
+      "hi": "वह",
+      "mni": "মদু",
+      "mni_latin": "madu"
+    },
+    {
+      "en": "what",
+      "hi": "क्या",
+      "mni": "করি",
+      "mni_latin": "kari"
+    },
+    {
+      "en": "how",
+      "hi": "कैसे",
+      "mni": "কনা",
+      "mni_latin": "kana"
+    },
+    {
+      "en": "why",
+      "hi": "क्यों",
+      "mni": "করিগীদমক",
+      "mni_latin": "karigidamak"
+    },
+    {
+      "en": "when",
+      "hi": "कब",
+      "mni": "কদায়দা",
+      "mni_latin": "kadayda"
+    },
+    {
+      "en": "where",
+      "hi": "कहाँ",
+      "mni": "করম্দা",
+      "mni_latin": "karamda"
+    },
+    {
+      "en": "we",
+      "hi": "हम",
+      "mni": "ঐখোয়",
+      "mni_latin": "oikhoi"
+    },
+    {
+      "en": "you",
+      "hi": "तुम",
+      "mni": "নং",
+      "mni_latin": "nang"
+    },
+    {
+      "en": "they",
+      "hi": "वे",
+      "mni": "মখোয়",
+      "mni_latin": "makhoi"
+    },
+    {
+      "en": "know",
+      "hi": "जानना",
+      "mni": "খংবা",
+      "mni_latin": "khangba"
+    },
+    {
+      "en": "understand",
+      "hi": "समझना",
+      "mni": "খংনবা",
+      "mni_latin": "khangnaba"
+    },
+    {
+      "en": "see",
+      "hi": "देखना",
+      "mni": "য়েংবা",
+      "mni_latin": "yengba"
+    },
+    {
+      "en": "hear",
+      "hi": "सुनना",
+      "mni": "তাবা",
+      "mni_latin": "taba"
+    },
+    {
+      "en": "tell",
+      "hi": "बताना",
+      "mni": "হায়বা",
+      "mni_latin": "hayba"
+    },
+    {
+      "en": "think",
+      "hi": "सोचना",
+      "mni": "খল্লবা",
+      "mni_latin": "khallaba"
+    },
+    {
+      "en": "do",
+      "hi": "करना",
+      "mni": "তৌবা",
+      "mni_latin": "touba"
+    },
+    {
+      "en": "make",
+      "hi": "बनाना",
+      "mni": "শেমবা",
+      "mni_latin": "shemba"
+    },
+    {
+      "en": "use",
+      "hi": "उपयोग",
+      "mni": "শিজিন্নবা",
+      "mni_latin": "shijinnaba"
+    },
+    {
+      "en": "give",
+      "hi": "देना",
+      "mni": "পীবা",
+      "mni_latin": "piba"
+    },
+    {
+      "en": "take",
+      "hi": "लेना",
+      "mni": "লৌবা",
+      "mni_latin": "louba"
+    },
+    {
+      "en": "come",
+      "hi": "आना",
+      "mni": "লাকপা",
+      "mni_latin": "lakpa"
+    },
+    {
+      "en": "go",
+      "hi": "जाना",
+      "mni": "চৎপা",
+      "mni_latin": "chatpa"
+    },
+    {
+      "en": "good",
+      "hi": "अच्छा",
+      "mni": "ফবা",
+      "mni_latin": "phaba"
+    },
+    {
+      "en": "bad",
+      "hi": "बुरा",
+      "mni": "পাম্বা",
+      "mni_latin": "pamba"
+    },
+    {
+      "en": "big",
+      "hi": "बड़ा",
+      "mni": "চাউবা",
+      "mni_latin": "chauba"
+    },
+    {
+      "en": "small",
+      "hi": "छोटा",
+      "mni": "মপান",
+      "mni_latin": "mapan"
+    },
+    {
+      "en": "new",
+      "hi": "नया",
+      "mni": "অনৌবা",
+      "mni_latin": "anouba"
+    },
+    {
+      "en": "old",
+      "hi": "पुराना",
+      "mni": "অরিবা",
+      "mni_latin": "ariba"
+    },
+    {
+      "en": "first",
+      "hi": "पहला",
+      "mni": "অহানবা",
+      "mni_latin": "ahanba"
+    },
+    {
+      "en": "last",
+      "hi": "अंतिम",
+      "mni": "অরোইবা",
+      "mni_latin": "aroiba"
+    },
+    {
+      "en": "many",
+      "hi": "बहुत",
+      "mni": "মায়াম",
+      "mni_latin": "mayam"
+    },
+    {
+      "en": "few",
+      "hi": "कम",
+      "mni": "খরা",
+      "mni_latin": "khara"
+    },
+    {
+      "en": "all",
+      "hi": "सब",
+      "mni": "পুম্নমক",
+      "mni_latin": "pumnamak"
+    },
+    {
+      "en": "some",
+      "hi": "कुछ",
+      "mni": "খরা",
+      "mni_latin": "khara"
+    },
+    {
+      "en": "also",
+      "hi": "भी",
+      "mni": "সু",
+      "mni_latin": "su"
+    },
+    {
+      "en": "very",
+      "hi": "बहुत",
+      "mni": "য়াম",
+      "mni_latin": "yam"
+    },
+    {
+      "en": "but",
+      "hi": "लेकिन",
+      "mni": "অদুবু",
+      "mni_latin": "adubu"
+    },
+    {
+      "en": "because",
+      "hi": "क्योंकि",
+      "mni": "মরমদি",
+      "mni_latin": "maramdi"
+    },
+    {
+      "en": "if",
+      "hi": "अगर",
+      "mni": "করিগুম্বা",
+      "mni_latin": "karigumba"
+    },
+    {
+      "en": "then",
+      "hi": "तो",
+      "mni": "অদুনা",
+      "mni_latin": "aduna"
+    },
+    {
+      "en": "now",
+      "hi": "अब",
+      "mni": "হৌজিক",
+      "mni_latin": "houjik"
+    },
+    {
+      "en": "before",
+      "hi": "पहले",
+      "mni": "মমাংদা",
+      "mni_latin": "mamangda"
+    },
+    {
+      "en": "after",
+      "hi": "बाद",
+      "mni": "মতুংদা",
+      "mni_latin": "matungda"
+    },
+    {
+      "en": "here",
+      "hi": "यहाँ",
+      "mni": "মফমসিদা",
+      "mni_latin": "maphamsida"
+    },
+    {
+      "en": "there",
+      "hi": "वहाँ",
+      "mni": "মফমদুদা",
+      "mni_latin": "maphamduda"
+    },
+    {
+      "en": "again",
+      "hi": "फिर",
+      "mni": "অমুক",
+      "mni_latin": "amuk"
+    },
+    {
+      "en": "only",
+      "hi": "सिर्फ",
+      "mni": "খক্তদা",
+      "mni_latin": "khaktada"
+    },
+    {
+      "en": "together",
+      "hi": "साथ",
+      "mni": "পুন্না",
+      "mni_latin": "punna"
+    },
+    {
+      "en": "different",
+      "hi": "अलग",
+      "mni": "মখোই",
+      "mni_latin": "makhoi"
+    },
+    {
+      "en": "same",
+      "hi": "समान",
+      "mni": "মান্না",
+      "mni_latin": "manna"
+    },
+    {
+      "en": "important",
+      "hi": "महत्वपूर्ण",
+      "mni": "কান্নবা",
+      "mni_latin": "kannaba"
+    },
+    {
+      "en": "necessary",
+      "hi": "आवश्यक",
+      "mni": "দরকার",
+      "mni_latin": "darkar"
+    },
+    {
+      "en": "possible",
+      "hi": "संभव",
+      "mni": "ওইরবা",
+      "mni_latin": "oiraba"
+    },
+    {
+      "en": "difficult",
+      "hi": "कठिन",
+      "mni": "ৱাবদবা",
+      "mni_latin": "wabadaba"
+    },
+    {
+      "en": "easy",
+      "hi": "आसान",
+      "mni": "লায়বা",
+      "mni_latin": "layba"
+    },
+    {
+      "en": "correct",
+      "hi": "सही",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "wrong",
+      "hi": "गलत",
+      "mni": "অচুম্বা নত্তবা",
+      "mni_latin": "achumba nattaba"
+    },
+    {
+      "en": "complete",
+      "hi": "पूर्ण",
+      "mni": "চাও",
+      "mni_latin": "chao"
+    },
+    {
+      "en": "part",
+      "hi": "भाग",
+      "mni": "শরুক",
+      "mni_latin": "sharuk"
+    },
+    {
+      "en": "example",
+      "hi": "उदाहरण",
+      "mni": "খুদম",
+      "mni_latin": "khudam"
+    },
+    {
+      "en": "question",
+      "hi": "प्रश्न",
+      "mni": "ৱাহং",
+      "mni_latin": "wahang"
+    },
+    {
+      "en": "answer",
+      "hi": "उत्तर",
+      "mni": "পাউখুম",
+      "mni_latin": "paukhum"
+    },
+    {
+      "en": "problem",
+      "hi": "समस्या",
+      "mni": "ৱাফম",
+      "mni_latin": "wapham"
+    },
+    {
+      "en": "solution",
+      "hi": "समाधान",
+      "mni": "ফিরেপ",
+      "mni_latin": "phirep"
+    },
+    {
+      "en": "step",
+      "hi": "कदम",
+      "mni": "খোংথাং",
+      "mni_latin": "khongthang"
+    },
+    {
+      "en": "level",
+      "hi": "स्तर",
+      "mni": "লেভেল",
+      "mni_latin": "level"
+    },
+    {
+      "en": "type",
+      "hi": "प्रकार",
+      "mni": "মখল",
+      "mni_latin": "makhal"
+    },
+    {
+      "en": "form",
+      "hi": "रूप",
+      "mni": "ফোর্ম",
+      "mni_latin": "form"
+    },
+    {
+      "en": "shape",
+      "hi": "आकार",
+      "mni": "মওং",
+      "mni_latin": "mawong"
+    },
+    {
+      "en": "size",
+      "hi": "आकार",
+      "mni": "চাংবা",
+      "mni_latin": "changba"
+    },
+    {
+      "en": "number",
+      "hi": "संख्या",
+      "mni": "মশিং",
+      "mni_latin": "mashing"
+    },
+    {
+      "en": "one",
+      "hi": "एक",
+      "mni": "অমা",
+      "mni_latin": "ama"
+    },
+    {
+      "en": "two",
+      "hi": "दो",
+      "mni": "অনী",
+      "mni_latin": "ani"
+    },
+    {
+      "en": "three",
+      "hi": "तीन",
+      "mni": "অহুম",
+      "mni_latin": "ahum"
+    },
+    {
+      "en": "four",
+      "hi": "चार",
+      "mni": "মরী",
+      "mni_latin": "mari"
+    },
+    {
+      "en": "five",
+      "hi": "पाँच",
+      "mni": "মঙা",
+      "mni_latin": "manga"
+    },
+    {
+      "en": "ten",
+      "hi": "दस",
+      "mni": "তরা",
+      "mni_latin": "tara"
+    },
+    {
+      "en": "hundred",
+      "hi": "सौ",
+      "mni": "চামা",
+      "mni_latin": "chama"
+    },
+    {
+      "en": "thousand",
+      "hi": "हज़ार",
+      "mni": "লিশিং",
+      "mni_latin": "lishing"
+    },
+    {
+      "en": "zero",
+      "hi": "शून्य",
+      "mni": "লৈহাও",
+      "mni_latin": "leihao"
+    },
+    {
+      "en": "half",
+      "hi": "आधा",
+      "mni": "অশানি",
+      "mni_latin": "ashani"
+    },
+    {
+      "en": "more",
+      "hi": "ज़्यादा",
+      "mni": "হেন্না",
+      "mni_latin": "henna"
+    },
+    {
+      "en": "less",
+      "hi": "कम",
+      "mni": "শাংনা",
+      "mni_latin": "shangna"
+    },
+    {
+      "en": "equal",
+      "hi": "बराबर",
+      "mni": "মান্না",
+      "mni_latin": "manna"
+    },
+    {
+      "en": "maximum",
+      "hi": "अधिकतम",
+      "mni": "কান্নম্বা",
+      "mni_latin": "kannamba"
+    },
+    {
+      "en": "minimum",
+      "hi": "न्यूनतम",
+      "mni": "অৎকন্নবা",
+      "mni_latin": "atkannaba"
+    },
+    {
+      "en": "average",
+      "hi": "औसत",
+      "mni": "এভেরেজ",
+      "mni_latin": "everej"
+    },
+    {
+      "en": "total",
+      "hi": "कुल",
+      "mni": "পুম্নমক",
+      "mni_latin": "pumnamak"
+    },
+    {
+      "en": "point",
+      "hi": "बिंदु",
+      "mni": "পোইন্ত",
+      "mni_latin": "point"
+    },
+    {
+      "en": "line",
+      "hi": "रेखा",
+      "mni": "লাইন",
+      "mni_latin": "lain"
+    },
+    {
+      "en": "graph",
+      "hi": "ग्राफ",
+      "mni": "গ্রাফ",
+      "mni_latin": "graph"
+    },
+    {
+      "en": "plot",
+      "hi": "प्लॉट",
+      "mni": "প্লোত",
+      "mni_latin": "plot"
+    },
+    {
+      "en": "curve",
+      "hi": "वक्र",
+      "mni": "কর্ভ",
+      "mni_latin": "karv"
+    },
+    {
+      "en": "peak",
+      "hi": "शिखर",
+      "mni": "পীক",
+      "mni_latin": "pik"
+    },
+    {
+      "en": "valley",
+      "hi": "घाटी",
+      "mni": "তম্পাক",
+      "mni_latin": "tampak"
+    },
+    {
+      "en": "range",
+      "hi": "सीमा",
+      "mni": "রেঞ্জ",
+      "mni_latin": "renj"
+    },
+    {
+      "en": "scale",
+      "hi": "पैमाना",
+      "mni": "স্কেল",
+      "mni_latin": "skel"
+    },
+    {
+      "en": "unit",
+      "hi": "इकाई",
+      "mni": "ইউনিত",
+      "mni_latin": "yunit"
+    },
+    {
+      "en": "measure",
+      "hi": "माप",
+      "mni": "শোয়বা",
+      "mni_latin": "shoyba"
+    },
+    {
+      "en": "test",
+      "hi": "परीक्षा",
+      "mni": "তেস্ত",
+      "mni_latin": "test"
+    },
+    {
+      "en": "train",
+      "hi": "प्रशिक्षण",
+      "mni": "ত্রেন",
+      "mni_latin": "tren"
+    },
+    {
+      "en": "validate",
+      "hi": "मान्य",
+      "mni": "ভ্যালিদেত",
+      "mni_latin": "validet"
+    },
+    {
+      "en": "predict",
+      "hi": "भविष्यवाणी",
+      "mni": "প্রেদিক্ত",
+      "mni_latin": "predikt"
+    },
+    {
+      "en": "classify",
+      "hi": "वर्गीकृत",
+      "mni": "ক্লাসিফাই",
+      "mni_latin": "klasifai"
+    },
+    {
+      "en": "recognize",
+      "hi": "पहचानना",
+      "mni": "খংবা",
+      "mni_latin": "khangba"
+    },
+    {
+      "en": "detect",
+      "hi": "पता लगाना",
+      "mni": "ফংবা",
+      "mni_latin": "phangba"
+    },
+    {
+      "en": "extract",
+      "hi": "निकालना",
+      "mni": "লৌথোকপা",
+      "mni_latin": "louthokpa"
+    },
+    {
+      "en": "compute",
+      "hi": "गणना",
+      "mni": "কম্পুত",
+      "mni_latin": "komput"
+    },
+    {
+      "en": "calculate",
+      "hi": "गणना करना",
+      "mni": "মশিং কৈবা",
+      "mni_latin": "mashing kaiba"
+    },
+    {
+      "en": "estimate",
+      "hi": "अनुमान",
+      "mni": "এস্তিমেত",
+      "mni_latin": "estimet"
+    },
+    {
+      "en": "optimize",
+      "hi": "अनुकूलित",
+      "mni": "অপ্তিমাইজ",
+      "mni_latin": "optimaiz"
+    },
+    {
+      "en": "minimize",
+      "hi": "कम करना",
+      "mni": "মিনিমাইজ",
+      "mni_latin": "minimaiz"
+    },
+    {
+      "en": "maximize",
+      "hi": "बढ़ाना",
+      "mni": "ম্যাক্সিমাইজ",
+      "mni_latin": "maksimaiz"
+    },
+    {
+      "en": "initialize",
+      "hi": "आरंभ",
+      "mni": "ইনিসিয়ালাইজ",
+      "mni_latin": "inisiyalaiz"
+    },
+    {
+      "en": "update",
+      "hi": "अद्यतन",
+      "mni": "অপদেত",
+      "mni_latin": "apdet"
+    },
+    {
+      "en": "iterate",
+      "hi": "दोहराना",
+      "mni": "ইতরেত",
+      "mni_latin": "itaret"
+    },
+    {
+      "en": "converge",
+      "hi": "अभिसरण",
+      "mni": "কনভর্জ",
+      "mni_latin": "konvarj"
+    },
+    {
+      "en": "diverge",
+      "hi": "विचलन",
+      "mni": "দাইভর্জ",
+      "mni_latin": "daivarj"
+    },
+    {
+      "en": "apply",
+      "hi": "लागू करना",
+      "mni": "এপ্লাই",
+      "mni_latin": "eplai"
+    },
+    {
+      "en": "implement",
+      "hi": "लागू करना",
+      "mni": "ইম্প্লিমেন্ত",
+      "mni_latin": "implement"
+    },
+    {
+      "en": "develop",
+      "hi": "विकसित",
+      "mni": "দিভেলোপ",
+      "mni_latin": "divelop"
+    },
+    {
+      "en": "design",
+      "hi": "डिज़ाइन",
+      "mni": "দিজাইন",
+      "mni_latin": "dijain"
+    },
+    {
+      "en": "build",
+      "hi": "बनाना",
+      "mni": "শেমবা",
+      "mni_latin": "shemba"
+    },
+    {
+      "en": "create",
+      "hi": "बनाना",
+      "mni": "শেমবা",
+      "mni_latin": "shemba"
+    },
+    {
+      "en": "modify",
+      "hi": "संशोधित",
+      "mni": "ওন্থোকপা",
+      "mni_latin": "onthokpa"
+    },
+    {
+      "en": "change",
+      "hi": "बदलना",
+      "mni": "হোংদোকপা",
+      "mni_latin": "hongdokpa"
+    },
+    {
+      "en": "increase",
+      "hi": "बढ़ाना",
+      "mni": "হেনগৎহনবা",
+      "mni_latin": "hengathanba"
+    },
+    {
+      "en": "decrease",
+      "hi": "घटाना",
+      "mni": "হন্থহনবা",
+      "mni_latin": "hanthahanba"
+    },
+    {
+      "en": "add",
+      "hi": "जोड़ना",
+      "mni": "য়াওহনবা",
+      "mni_latin": "yaohanba"
+    },
+    {
+      "en": "remove",
+      "hi": "हटाना",
+      "mni": "লৌথোকপা",
+      "mni_latin": "louthokpa"
+    },
+    {
+      "en": "combine",
+      "hi": "जोड़ना",
+      "mni": "পুন্না শেমবা",
+      "mni_latin": "punna shemba"
+    },
+    {
+      "en": "separate",
+      "hi": "अलग",
+      "mni": "খায়দোক্নবা",
+      "mni_latin": "khaydoknaba"
+    },
+    {
+      "en": "compare",
+      "hi": "तुलना",
+      "mni": "চান্নবা",
+      "mni_latin": "channaba"
+    },
+    {
+      "en": "match",
+      "hi": "मिलान",
+      "mni": "মান্নবা",
+      "mni_latin": "mannaba"
+    },
+    {
+      "en": "select",
+      "hi": "चुनना",
+      "mni": "খনবা",
+      "mni_latin": "khanba"
+    },
+    {
+      "en": "choose",
+      "hi": "चुनना",
+      "mni": "খনবা",
+      "mni_latin": "khanba"
+    },
+    {
+      "en": "define",
+      "hi": "परिभाषित",
+      "mni": "মরু ৱাহৈ",
+      "mni_latin": "maru wahai"
+    },
+    {
+      "en": "describe",
+      "hi": "वर्णन",
+      "mni": "ৱা শন্দোকপা",
+      "mni_latin": "wa shandokpa"
+    },
+    {
+      "en": "explain",
+      "hi": "समझाना",
+      "mni": "ৱা শন্দোকপা",
+      "mni_latin": "wa shandokpa"
+    },
+    {
+      "en": "analyze",
+      "hi": "विश्लेषण",
+      "mni": "খন্নবা",
+      "mni_latin": "khannaba"
+    },
+    {
+      "en": "study",
+      "hi": "अध्ययन",
+      "mni": "তম্বা",
+      "mni_latin": "tamba"
+    },
+    {
+      "en": "research",
+      "hi": "अनुसंधान",
+      "mni": "রিসর্চ",
+      "mni_latin": "risarch"
+    },
+    {
+      "en": "lecture",
+      "hi": "व्याख्यान",
+      "mni": "পাঠ",
+      "mni_latin": "path"
+    },
+    {
+      "en": "student",
+      "hi": "छात्र",
+      "mni": "মহৈরোই",
+      "mni_latin": "maheiroi"
+    },
+    {
+      "en": "teacher",
+      "hi": "शिक्षक",
+      "mni": "ওজা",
+      "mni_latin": "oja"
+    },
+    {
+      "en": "professor",
+      "hi": "प्रोफेसर",
+      "mni": "প্রোফেসর",
+      "mni_latin": "prophesor"
+    },
+    {
+      "en": "course",
+      "hi": "पाठ्यक्रम",
+      "mni": "কোর্স",
+      "mni_latin": "kors"
+    },
+    {
+      "en": "topic",
+      "hi": "विषय",
+      "mni": "তোপিক",
+      "mni_latin": "topik"
+    },
+    {
+      "en": "concept",
+      "hi": "अवधारणा",
+      "mni": "কন্সেপ্ত",
+      "mni_latin": "konsept"
+    },
+    {
+      "en": "theory",
+      "hi": "सिद्धांत",
+      "mni": "থিওরি",
+      "mni_latin": "thiori"
+    },
+    {
+      "en": "practice",
+      "hi": "अभ्यास",
+      "mni": "প্র্যাক্তিস",
+      "mni_latin": "praktis"
+    },
+    {
+      "en": "assignment",
+      "hi": "कार्य",
+      "mni": "এসাইনমেন্ত",
+      "mni_latin": "esainment"
+    },
+    {
+      "en": "project",
+      "hi": "परियोजना",
+      "mni": "প্রোজেক্ত",
+      "mni_latin": "projekt"
+    },
+    {
+      "en": "report",
+      "hi": "रिपोर्ट",
+      "mni": "রিপোর্ত",
+      "mni_latin": "riport"
+    },
+    {
+      "en": "paper",
+      "hi": "पेपर",
+      "mni": "পেপর",
+      "mni_latin": "pepar"
+    },
+    {
+      "en": "reference",
+      "hi": "संदर्भ",
+      "mni": "রেফরেন্স",
+      "mni_latin": "repherens"
+    },
+    {
+      "en": "review",
+      "hi": "समीक्षा",
+      "mni": "রিভিউ",
+      "mni_latin": "riviu"
+    },
+    {
+      "en": "summary",
+      "hi": "सारांश",
+      "mni": "সমরি",
+      "mni_latin": "samari"
+    },
+    {
+      "en": "conclusion",
+      "hi": "निष्कर्ष",
+      "mni": "কনক্লুজন",
+      "mni_latin": "konklujan"
+    },
+    {
+      "en": "introduction",
+      "hi": "परिचय",
+      "mni": "ইন্ত্রোদক্সন",
+      "mni_latin": "introdakshan"
+    },
+    {
+      "en": "chapter",
+      "hi": "अध्याय",
+      "mni": "চ্যাপ্তর",
+      "mni_latin": "chaptar"
+    },
+    {
+      "en": "section",
+      "hi": "अनुभाग",
+      "mni": "শরুক",
+      "mni_latin": "sharuk"
+    },
+    {
+      "en": "figure",
+      "hi": "चित्र",
+      "mni": "ফিগর",
+      "mni_latin": "phigar"
+    },
+    {
+      "en": "table",
+      "hi": "तालिका",
+      "mni": "তেবুল",
+      "mni_latin": "tebul"
+    },
+    {
+      "en": "diagram",
+      "hi": "आरेख",
+      "mni": "দায়গ্রাম",
+      "mni_latin": "dayagram"
+    },
+    {
+      "en": "image",
+      "hi": "छवि",
+      "mni": "ইমেজ",
+      "mni_latin": "imej"
+    },
+    {
+      "en": "text",
+      "hi": "पाठ",
+      "mni": "তেক্স্ত",
+      "mni_latin": "tekst"
+    },
+    {
+      "en": "audio",
+      "hi": "ऑडियो",
+      "mni": "অদিও",
+      "mni_latin": "odiyo"
+    },
+    {
+      "en": "video",
+      "hi": "वीडियो",
+      "mni": "ভিদিও",
+      "mni_latin": "vidiyo"
+    },
+    {
+      "en": "file",
+      "hi": "फ़ाइल",
+      "mni": "ফাইল",
+      "mni_latin": "phail"
+    },
+    {
+      "en": "format",
+      "hi": "प्रारूप",
+      "mni": "ফর্ম্যাত",
+      "mni_latin": "phormat"
+    },
+    {
+      "en": "code",
+      "hi": "कोड",
+      "mni": "কোদ",
+      "mni_latin": "kod"
+    },
+    {
+      "en": "script",
+      "hi": "स्क्रिप्ट",
+      "mni": "ময়েক",
+      "mni_latin": "mayek"
+    },
+    {
+      "en": "library",
+      "hi": "पुस्तकालय",
+      "mni": "লাইব্রেরি",
+      "mni_latin": "library"
+    },
+    {
+      "en": "framework",
+      "hi": "ढांचा",
+      "mni": "ফ্রেমৱর্ক",
+      "mni_latin": "framework"
+    },
+    {
+      "en": "pipeline",
+      "hi": "पाइपलाइन",
+      "mni": "পাইপলাইন",
+      "mni_latin": "paiplain"
+    },
+    {
+      "en": "module",
+      "hi": "मॉड्यूल",
+      "mni": "মোদিউল",
+      "mni_latin": "modul"
+    },
+    {
+      "en": "interface",
+      "hi": "इंटरफ़ेस",
+      "mni": "ইন্তরফেস",
+      "mni_latin": "intarphes"
+    },
+    {
+      "en": "function",
+      "hi": "फंक्शन",
+      "mni": "ফংক্সন",
+      "mni_latin": "phangksan"
+    },
+    {
+      "en": "variable",
+      "hi": "चर",
+      "mni": "ভেরিয়েবল",
+      "mni_latin": "veriyebal"
+    },
+    {
+      "en": "constant",
+      "hi": "स्थिरांक",
+      "mni": "কনস্ত্যান্ত",
+      "mni_latin": "konstant"
+    },
+    {
+      "en": "array",
+      "hi": "सरणी",
+      "mni": "এরে",
+      "mni_latin": "ere"
+    },
+    {
+      "en": "list",
+      "hi": "सूची",
+      "mni": "লিস্ত",
+      "mni_latin": "list"
+    },
+    {
+      "en": "loop",
+      "hi": "लूप",
+      "mni": "লুপ",
+      "mni_latin": "lup"
+    },
+    {
+      "en": "condition",
+      "hi": "शर्त",
+      "mni": "কন্দিসন",
+      "mni_latin": "kondisan"
+    },
+    {
+      "en": "true",
+      "hi": "सत्य",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "false",
+      "hi": "असत्य",
+      "mni": "অচুম্বা নত্তবা",
+      "mni_latin": "achumba nattaba"
+    },
+    {
+      "en": "start",
+      "hi": "शुरू",
+      "mni": "হৌরকপা",
+      "mni_latin": "hourakpa"
+    },
+    {
+      "en": "end",
+      "hi": "अंत",
+      "mni": "লোয়বা",
+      "mni_latin": "loyba"
+    },
+    {
+      "en": "begin",
+      "hi": "आरंभ",
+      "mni": "হৌদোকপা",
+      "mni_latin": "houdokpa"
+    },
+    {
+      "en": "finish",
+      "hi": "समाप्त",
+      "mni": "লোয়শিনবা",
+      "mni_latin": "loyshinba"
+    },
+    {
+      "en": "continue",
+      "hi": "जारी",
+      "mni": "হেন্না চৎপা",
+      "mni_latin": "henna chatpa"
+    },
+    {
+      "en": "stop",
+      "hi": "रुकना",
+      "mni": "লেপপা",
+      "mni_latin": "leppa"
+    },
+    {
+      "en": "wait",
+      "hi": "रुको",
+      "mni": "লৌউ",
+      "mni_latin": "louu"
+    },
+    {
+      "en": "next",
+      "hi": "अगला",
+      "mni": "অসুম্না",
+      "mni_latin": "asumna"
+    },
+    {
+      "en": "previous",
+      "hi": "पिछला",
+      "mni": "মমাংগী",
+      "mni_latin": "mamanggi"
+    },
+    {
+      "en": "current",
+      "hi": "वर्तमान",
+      "mni": "হৌজিক্কী",
+      "mni_latin": "houjikki"
+    },
+    {
+      "en": "above",
+      "hi": "ऊपर",
+      "mni": "মথক্তা",
+      "mni_latin": "mathakta"
+    },
+    {
+      "en": "below",
+      "hi": "नीचे",
+      "mni": "মখাদা",
+      "mni_latin": "makhada"
+    },
+    {
+      "en": "between",
+      "hi": "बीच",
+      "mni": "মনুংদা",
+      "mni_latin": "manungda"
+    },
+    {
+      "en": "inside",
+      "hi": "अंदर",
+      "mni": "মনুংদা",
+      "mni_latin": "manungda"
+    },
+    {
+      "en": "outside",
+      "hi": "बाहर",
+      "mni": "মপান্দা",
+      "mni_latin": "mapanda"
+    },
+    {
+      "en": "left",
+      "hi": "बाएँ",
+      "mni": "মকেইদা",
+      "mni_latin": "makeida"
+    },
+    {
+      "en": "right",
+      "hi": "दाएँ",
+      "mni": "মতেংদা",
+      "mni_latin": "matengda"
+    },
+    {
+      "en": "high",
+      "hi": "ऊँचा",
+      "mni": "ৱাংবা",
+      "mni_latin": "wangba"
+    },
+    {
+      "en": "low",
+      "hi": "नीचा",
+      "mni": "লাপ্পা",
+      "mni_latin": "lappa"
+    },
+    {
+      "en": "fast",
+      "hi": "तेज़",
+      "mni": "শাংনা",
+      "mni_latin": "shangna"
+    },
+    {
+      "en": "slow",
+      "hi": "धीमा",
+      "mni": "মথৌনা",
+      "mni_latin": "mathouna"
+    },
+    {
+      "en": "long",
+      "hi": "लंबा",
+      "mni": "শুবা",
+      "mni_latin": "shuba"
+    },
+    {
+      "en": "short",
+      "hi": "छोटा",
+      "mni": "তিনবা",
+      "mni_latin": "tinba"
+    },
+    {
+      "en": "wide",
+      "hi": "चौड़ा",
+      "mni": "পাক্কা",
+      "mni_latin": "pakka"
+    },
+    {
+      "en": "narrow",
+      "hi": "संकीर्ण",
+      "mni": "অফিকপা",
+      "mni_latin": "aphikpa"
+    },
+    {
+      "en": "strong",
+      "hi": "मजबूत",
+      "mni": "চেনবা",
+      "mni_latin": "chenba"
+    },
+    {
+      "en": "weak",
+      "hi": "कमजोर",
+      "mni": "চাউনবা",
+      "mni_latin": "chaunba"
+    },
+    {
+      "en": "clean",
+      "hi": "साफ",
+      "mni": "সেংবা",
+      "mni_latin": "sengba"
+    },
+    {
+      "en": "noisy",
+      "hi": "शोरगुल",
+      "mni": "হৌরাং চাউবা",
+      "mni_latin": "hourang chauba"
+    },
+    {
+      "en": "clear",
+      "hi": "स्पष्ट",
+      "mni": "খংনবা য়াবা",
+      "mni_latin": "khangnaba yaba"
+    },
+    {
+      "en": "complex",
+      "hi": "जटिल",
+      "mni": "কম্প্লেক্স",
+      "mni_latin": "kompleks"
+    },
+    {
+      "en": "simple",
+      "hi": "सरल",
+      "mni": "লায়বা",
+      "mni_latin": "layba"
+    },
+    {
+      "en": "continuous",
+      "hi": "सतत",
+      "mni": "চৎলবা",
+      "mni_latin": "chatlaba"
+    },
+    {
+      "en": "discrete",
+      "hi": "असतत",
+      "mni": "দিস্ক্রিত",
+      "mni_latin": "diskrit"
+    },
+    {
+      "en": "random",
+      "hi": "यादृच्छिक",
+      "mni": "র্যান্দম",
+      "mni_latin": "random"
+    },
+    {
+      "en": "periodic",
+      "hi": "आवधिक",
+      "mni": "পিরিওদিক",
+      "mni_latin": "piriyodik"
+    },
+    {
+      "en": "stable",
+      "hi": "स्थिर",
+      "mni": "চপ্পা",
+      "mni_latin": "chappa"
+    },
+    {
+      "en": "unstable",
+      "hi": "अस्थिर",
+      "mni": "চপ্পা নত্তবা",
+      "mni_latin": "chappa nattaba"
+    },
+    {
+      "en": "positive",
+      "hi": "सकारात्मक",
+      "mni": "পোজিতিভ",
+      "mni_latin": "pojitiv"
+    },
+    {
+      "en": "negative",
+      "hi": "नकारात्मक",
+      "mni": "নেগেতিভ",
+      "mni_latin": "negetiv"
+    },
+    {
+      "en": "absolute",
+      "hi": "निरपेक्ष",
+      "mni": "এব্সোলুত",
+      "mni_latin": "ebsolut"
+    },
+    {
+      "en": "relative",
+      "hi": "सापेक्ष",
+      "mni": "রেলেতিভ",
+      "mni_latin": "reletiv"
+    },
+    {
+      "en": "approximate",
+      "hi": "अनुमानित",
+      "mni": "এপ্রোক্সিমেত",
+      "mni_latin": "eproksimet"
+    },
+    {
+      "en": "exact",
+      "hi": "सटीक",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "original",
+      "hi": "मूल",
+      "mni": "ওরিজিনল",
+      "mni_latin": "orijinal"
+    },
+    {
+      "en": "modified",
+      "hi": "संशोधित",
+      "mni": "মোদিফাইদ",
+      "mni_latin": "modiphaid"
+    },
+    {
+      "en": "improved",
+      "hi": "सुधार",
+      "mni": "ফজনবা",
+      "mni_latin": "phajanba"
+    },
+    {
+      "en": "standard",
+      "hi": "मानक",
+      "mni": "স্ত্যান্দার্দ",
+      "mni_latin": "standard"
+    },
+    {
+      "en": "custom",
+      "hi": "कस्टम",
+      "mni": "কস্তম",
+      "mni_latin": "kostam"
+    },
+    {
+      "en": "default",
+      "hi": "डिफ़ॉल्ट",
+      "mni": "দিফল্ত",
+      "mni_latin": "dipholt"
+    },
+    {
+      "en": "optimal",
+      "hi": "इष्टतम",
+      "mni": "অপ্তিমল",
+      "mni_latin": "optimal"
+    },
+    {
+      "en": "efficient",
+      "hi": "कुशल",
+      "mni": "ইফিসিয়েন্ত",
+      "mni_latin": "iphisient"
+    },
+    {
+      "en": "robust",
+      "hi": "मजबूत",
+      "mni": "রোবস্ত",
+      "mni_latin": "robust"
+    },
+    {
+      "en": "reliable",
+      "hi": "विश्वसनीय",
+      "mni": "থাজনবা য়াবা",
+      "mni_latin": "thajnaba yaba"
+    },
+    {
+      "en": "accurate",
+      "hi": "सटीक",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "precise",
+      "hi": "सटीक",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "sparse",
+      "hi": "विरल",
+      "mni": "স্পার্স",
+      "mni_latin": "spars"
+    },
+    {
+      "en": "dense",
+      "hi": "घना",
+      "mni": "ডেন্স",
+      "mni_latin": "dens"
+    },
+    {
+      "en": "parallel",
+      "hi": "समानांतर",
+      "mni": "প্যারালেল",
+      "mni_latin": "paralel"
+    },
+    {
+      "en": "recursive",
+      "hi": "पुनरावर्ती",
+      "mni": "রিকর্সিভ",
+      "mni_latin": "rikarsiv"
+    },
+    {
+      "en": "inverse",
+      "hi": "व्युत्क्रम",
+      "mni": "ইনভর্স",
+      "mni_latin": "invars"
+    },
+    {
+      "en": "transform",
+      "hi": "रूपांतर",
+      "mni": "ত্রান্সফর্ম",
+      "mni_latin": "transform"
+    },
+    {
+      "en": "compress",
+      "hi": "संपीड़न",
+      "mni": "কম্প্রেস",
+      "mni_latin": "kompres"
+    },
+    {
+      "en": "i",
+      "hi": "मैं",
+      "mni": "ঐ",
+      "mni_latin": "ei"
+    },
+    {
+      "en": "my",
+      "hi": "मेरा",
+      "mni": "ঐগী",
+      "mni_latin": "eigi"
+    },
+    {
+      "en": "me",
+      "hi": "मुझे",
+      "mni": "ঐবু",
+      "mni_latin": "eibu"
+    },
+    {
+      "en": "our",
+      "hi": "हमारा",
+      "mni": "ঐখোয়গী",
+      "mni_latin": "oikhoigi"
+    },
+    {
+      "en": "country",
+      "hi": "देश",
+      "mni": "লৈবাক",
+      "mni_latin": "leibak"
+    },
+    {
+      "en": "people",
+      "hi": "लोग",
+      "mni": "মীওই",
+      "mni_latin": "mioi"
+    },
+    {
+      "en": "not",
+      "hi": "नहीं",
+      "mni": "নত্তে",
+      "mni_latin": "natte"
+    },
+    {
+      "en": "and",
+      "hi": "और",
+      "mni": "অমসুং",
+      "mni_latin": "amsung"
+    },
+    {
+      "en": "from",
+      "hi": "से",
+      "mni": "দগী",
+      "mni_latin": "dagi"
+    },
+    {
+      "en": "in",
+      "hi": "में",
+      "mni": "দা",
+      "mni_latin": "da"
+    },
+    {
+      "en": "for",
+      "hi": "के लिए",
+      "mni": "গীদমক",
+      "mni_latin": "gidmak"
+    },
+    {
+      "en": "to",
+      "hi": "को",
+      "mni": "বু",
+      "mni_latin": "bu"
+    },
+    {
+      "en": "of",
+      "hi": "का",
+      "mni": "গী",
+      "mni_latin": "gi"
+    },
+    {
+      "en": "on",
+      "hi": "पर",
+      "mni": "দা",
+      "mni_latin": "da"
+    },
+    {
+      "en": "always",
+      "hi": "हमेशा",
+      "mni": "মতমপুম্বদা",
+      "mni_latin": "matampumbada"
+    },
+    {
+      "en": "today",
+      "hi": "आज",
+      "mni": "হৌজিক",
+      "mni_latin": "houjik"
+    },
+    {
+      "en": "work",
+      "hi": "काम",
+      "mni": "থবক",
+      "mni_latin": "thabak"
+    },
+    {
+      "en": "hard work",
+      "hi": "मेहनत",
+      "mni": "হোৎনবা",
+      "mni_latin": "hotnaba"
+    },
+    {
+      "en": "effort",
+      "hi": "प्रयास",
+      "mni": "হোৎনবা",
+      "mni_latin": "hotnaba"
+    },
+    {
+      "en": "promise",
+      "hi": "वादा",
+      "mni": "ৱাফম",
+      "mni_latin": "wapham"
+    },
+    {
+      "en": "service",
+      "hi": "सेवा",
+      "mni": "সেবা",
+      "mni_latin": "seba"
+    },
+    {
+      "en": "need",
+      "hi": "आवश्यकता",
+      "mni": "দরকার",
+      "mni_latin": "darkar"
+    },
+    {
+      "en": "responsibility",
+      "hi": "जिम्मेदारी",
+      "mni": "দায়ীত্ব",
+      "mni_latin": "dayitba"
+    },
+    {
+      "en": "inspiration",
+      "hi": "प्रेरणा",
+      "mni": "থৌরাং",
+      "mni_latin": "thourang"
+    },
+    {
+      "en": "aspiration",
+      "hi": "आकांक्षा",
+      "mni": "পাম্বৈ",
+      "mni_latin": "pambai"
+    },
+    {
+      "en": "decision",
+      "hi": "निर्णय",
+      "mni": "ৱারেপ",
+      "mni_latin": "warep"
+    },
+    {
+      "en": "respect",
+      "hi": "सम्मान",
+      "mni": "ইকায়খুম্নবা",
+      "mni_latin": "ikaikhumnaba"
+    },
+    {
+      "en": "knowledge",
+      "hi": "ज्ञान",
+      "mni": "লমদম",
+      "mni_latin": "lamdam"
+    },
+    {
+      "en": "idea",
+      "hi": "विचार",
+      "mni": "ৱাখল্লোন",
+      "mni_latin": "wakhallon"
+    },
+    {
+      "en": "experience",
+      "hi": "अनुभव",
+      "mni": "অনুভব",
+      "mni_latin": "anubhab"
+    },
+    {
+      "en": "poverty",
+      "hi": "गरीबी",
+      "mni": "লায়রবা",
+      "mni_latin": "layraba"
+    },
+    {
+      "en": "poor",
+      "hi": "गरीब",
+      "mni": "লায়রবা",
+      "mni_latin": "layraba"
+    },
+    {
+      "en": "rich",
+      "hi": "अमीर",
+      "mni": "মচু",
+      "mni_latin": "machu"
+    },
+    {
+      "en": "face",
+      "hi": "चेहरा",
+      "mni": "মায়",
+      "mni_latin": "mai"
+    },
+    {
+      "en": "mind",
+      "hi": "मन",
+      "mni": "ৱাখল",
+      "mni_latin": "wakhal"
+    },
+    {
+      "en": "heart",
+      "hi": "दिल",
+      "mni": "পুক্নিং",
+      "mni_latin": "pukning"
+    },
+    {
+      "en": "government",
+      "hi": "सरकार",
+      "mni": "সরকার",
+      "mni_latin": "sarkar"
+    },
+    {
+      "en": "year",
+      "hi": "साल",
+      "mni": "চহী",
+      "mni_latin": "chahi"
+    },
+    {
+      "en": "night",
+      "hi": "रात",
+      "mni": "অহিং",
+      "mni_latin": "ahing"
+    },
+    {
+      "en": "day",
+      "hi": "दिन",
+      "mni": "নুমিৎ",
+      "mni_latin": "numit"
+    },
+    {
+      "en": "road",
+      "hi": "रास्ता",
+      "mni": "লম্বী",
+      "mni_latin": "lambi"
+    },
+    {
+      "en": "world",
+      "hi": "दुनिया",
+      "mni": "তিল্লৈ মপাল",
+      "mni_latin": "tillai mapal"
+    },
+    {
+      "en": "economy",
+      "hi": "अर्थव्यवस्था",
+      "mni": "ইকোনোমি",
+      "mni_latin": "ikonomi"
+    },
+    {
+      "en": "speed",
+      "hi": "गति",
+      "mni": "শাংনা",
+      "mni_latin": "shangna"
+    },
+    {
+      "en": "truth",
+      "hi": "सच",
+      "mni": "অচুম্বা",
+      "mni_latin": "achumba"
+    },
+    {
+      "en": "life",
+      "hi": "जीवन",
+      "mni": "পুন্সি",
+      "mni_latin": "punsi"
+    },
+    {
+      "en": "himself",
+      "hi": "खुद",
+      "mni": "মশা",
+      "mni_latin": "masha"
+    },
+    {
+      "en": "self",
+      "hi": "अपना",
+      "mni": "মশাগী",
+      "mni_latin": "mashagi"
+    },
+    {
+      "en": "remember",
+      "hi": "याद",
+      "mni": "নিংশিংবা",
+      "mni_latin": "ningshingba"
+    },
+    {
+      "en": "look",
+      "hi": "देखिए",
+      "mni": "য়েংবিয়ু",
+      "mni_latin": "yengbiyu"
+    },
+    {
+      "en": "say",
+      "hi": "कहना",
+      "mni": "হায়বা",
+      "mni_latin": "hayba"
+    },
+    {
+      "en": "believe",
+      "hi": "मानना",
+      "mni": "থাজবা",
+      "mni_latin": "thajba"
+    },
+    {
+      "en": "sleep",
+      "hi": "सोना",
+      "mni": "তুম্বা",
+      "mni_latin": "tumba"
+    },
+    {
+      "en": "hungry",
+      "hi": "भूखा",
+      "mni": "চাকথবা",
+      "mni_latin": "chakthaba"
+    },
+    {
+      "en": "pressure",
+      "hi": "दबाव",
+      "mni": "প্রেসর",
+      "mni_latin": "presar"
+    },
+    {
+      "en": "success",
+      "hi": "सफलता",
+      "mni": "মায়পাকপা",
+      "mni_latin": "maypakpa"
+    },
+    {
+      "en": "travel",
+      "hi": "यात्रा",
+      "mni": "খোংচৎ",
+      "mni_latin": "khongchat"
+    },
+    {
+      "en": "patience",
+      "hi": "धैर्य",
+      "mni": "ঙাইহাকপা",
+      "mni_latin": "ngaihakpa"
+    },
+    {
+      "en": "discipline",
+      "hi": "अनुशासन",
+      "mni": "অনুশাসন",
+      "mni_latin": "anushasan"
+    },
+    {
+      "en": "devotion",
+      "hi": "तपस्या",
+      "mni": "তপস্যা",
+      "mni_latin": "tapasya"
+    },
+    {
+      "en": "prayer",
+      "hi": "पूजा",
+      "mni": "লাইনিংবা",
+      "mni_latin": "lainingba"
+    },
+    {
+      "en": "god",
+      "hi": "देवी",
+      "mni": "লাই",
+      "mni_latin": "lai"
+    },
+    {
+      "en": "spiritual",
+      "hi": "आध्यात्मिक",
+      "mni": "থৱায়গী",
+      "mni_latin": "thawaygi"
+    },
+    {
+      "en": "connect",
+      "hi": "जुड़ा",
+      "mni": "শম্নবা",
+      "mni_latin": "shamnaba"
+    },
+    {
+      "en": "lockdown",
+      "hi": "लॉकडाउन",
+      "mni": "লকদাউন",
+      "mni_latin": "lokdaun"
+    },
+    {
+      "en": "crisis",
+      "hi": "संकट",
+      "mni": "শোকহল্লবা",
+      "mni_latin": "shokhallaba"
+    },
+    {
+      "en": "inflation",
+      "hi": "महंगाई",
+      "mni": "মংলবা",
+      "mni_latin": "monglaba"
+    },
+    {
+      "en": "progress",
+      "hi": "प्रगति",
+      "mni": "হেন্না ফবা",
+      "mni_latin": "henna phaba"
+    },
+    {
+      "en": "their",
+      "hi": "उनकी",
+      "mni": "মখোয়গী",
+      "mni_latin": "makhoigi"
+    },
+    {
+      "en": "your",
+      "hi": "आपका",
+      "mni": "নঙগী",
+      "mni_latin": "nanggi"
+    },
+    {
+      "en": "her",
+      "hi": "उसकी",
+      "mni": "মদুগী",
+      "mni_latin": "madugi"
+    },
+    {
+      "en": "his",
+      "hi": "उसका",
+      "mni": "মদুগী",
+      "mni_latin": "madugi"
+    }
+  ]
+}

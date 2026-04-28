@@ -1,0 +1,9 @@
+conda_env: speech_hw2
+python_version: "3.10"
+gpu_index: 1
+cuda_visible_devices: "1"
+device: "cuda:0"
+sample_rate: 16000
+target_sample_rate: 24000
+target_language: "mni"
+target_language_name: "Meitei"
